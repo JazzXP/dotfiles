@@ -107,5 +107,5 @@ export PATH=$PATH:~/bin
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java9='export JAVA_HOME=$JAVA_9_HOME'
 
-alias ls='colorls --gs'
+# alias ls='colorls --gs'
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
