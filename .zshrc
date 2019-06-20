@@ -103,9 +103,10 @@ export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 # export JAVA_9_HOME=$(/usr/libexec/java_home -v1.9)
 
 export PATH=$PATH:~/bin
+alias ls='lsd'
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java9='export JAVA_HOME=$JAVA_9_HOME'
+alias dockerclear='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 
-# alias ls='colorls --gs'
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
