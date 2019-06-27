@@ -111,6 +111,7 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/ruby/lib/pkgconfig"
 alias ls='lsd'
 
 alias dockerclear='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
+alias dockercleardangling='docker rmi $(docker images -q -f dangling=true)'
 
 dockerinfo() {
     docker inspect $1 | jq '.[0].Config, .[0].Mounts'
