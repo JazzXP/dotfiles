@@ -112,6 +112,10 @@ alias ls='lsd'
 
 alias dockerclear='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 
+dockerinfo() {
+    docker inspect $1 | jq '.[0].Config, .[0].Mounts'
+}
+
 listening() {
     if [ $# -eq 0 ]; then
         sudo lsof -iTCP -sTCP:LISTEN -n -P
