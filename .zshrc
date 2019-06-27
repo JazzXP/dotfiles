@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/sdickinson/.oh-my-zsh
+export ZSH=/Users/dickinsons/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -99,14 +99,30 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+# export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 # export JAVA_9_HOME=$(/usr/libexec/java_home -v1.9)
 
-export PATH=$PATH:~/bin
+export PATH=/usr/local/opt/ruby/bin:/usr/local/opt/git/bin/:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH:~/bin
+
+export LDFLAGS="$LDFLAGS -L/usr/local/opt/ruby/lib"
+export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/ruby/lib/pkgconfig"
+
 alias ls='lsd'
 
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java9='export JAVA_HOME=$JAVA_9_HOME'
 alias dockerclear='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+listening() {
+    if [ $# -eq 0 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P
+    elif [ $# -eq 1 ]; then
+        sudo lsof -iTCP -sTCP:LISTEN -n -P | grep -i --color $1
+    else
+        echo "Usage: listening [pattern]"
+    fi
+}
+
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
+
