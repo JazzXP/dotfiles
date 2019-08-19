@@ -102,11 +102,12 @@ source $ZSH/oh-my-zsh.sh
 # export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 # export JAVA_9_HOME=$(/usr/libexec/java_home -v1.9)
 
-export PATH=/usr/local/opt/ruby/bin:/usr/local/opt/git/bin/:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH:~/bin
+export PATH=/usr/local/opt/vim/bin:/usr/local/opt/ruby/bin:/usr/local/opt/git/bin/:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH:~/bin
 
 export LDFLAGS="$LDFLAGS -L/usr/local/opt/ruby/lib"
 export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/ruby/lib/pkgconfig"
+export TERM=xterm-256color
 
 alias ls='lsd'
 
