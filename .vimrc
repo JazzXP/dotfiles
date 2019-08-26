@@ -8,6 +8,7 @@ set tabstop=4
 filetype plugin indent on
 set expandtab
 set shiftwidth=4
+set backspace=indent,eol,start
 
 " Install and run vim-plug on first run
 if empty(glob('~/.vim/autoload/plug.vim'))
