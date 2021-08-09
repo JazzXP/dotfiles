@@ -4,11 +4,19 @@ set laststatus=2
 set ru
 syntax on
 colorscheme desert
-set tabstop=4
+set tabstop=2
 filetype plugin indent on
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set backspace=indent,eol,start
+set encoding=UTF-8
+set smarttab
+set autoindent
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set showmatch
 
 " Install and run vim-plug on first run
 if empty(glob('~/.vim/autoload/plug.vim'))

@@ -5,5 +5,7 @@ Plug 'scrooloose/nerdtree'
 
 Plug '/usr/local/opt/fzf'
 
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 

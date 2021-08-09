@@ -61,12 +61,12 @@ ZSH_THEME="sam-agnoster"
 plugins=(
   git
   docker
-  docker-compose
-  aws
-  brew
-  npm
-  yarn
-
+  #docker-compose
+  #aws
+  #brew
+  #npm
+  #yarn
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -135,3 +135,5 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval $(thefuck --alias)
