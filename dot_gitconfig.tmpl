@@ -1,5 +1,5 @@
 [user]
-	name = JazzXP
-	email = sam@sdickinson.com
+	name = {{ .name | quote }}
+	email = {{ .email | quote }}
 [init]
 	defaultBranch = main
