@@ -1,0 +1,12 @@
+Include ~/.orbstack/ssh/config
+
+Host github.com
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+Host sdickinson.com
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+Host 172.236.35.111
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+
