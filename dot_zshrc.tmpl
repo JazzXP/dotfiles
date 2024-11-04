@@ -120,7 +120,6 @@ alias ls='lsd'
 
 alias dockerclear='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 alias dockercleardangling='docker rmi $(docker images -q -f dangling=true)'
-alias dockerstats='docker stats --all --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}"'
 
 dockerinfo() {
     docker inspect $1 | jq '.[0].Config, .[0].Mounts'
