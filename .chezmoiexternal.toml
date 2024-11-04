@@ -21,4 +21,7 @@
     url = "https://github.com/romkatv/powerlevel10k/archive/v1.15.0.tar.gz"
     exact = true
     stripComponents = 1
-
+[".vim/pack/alker0/chezmoi.vim"]
+    type = "git-repo"
+    url = "https://github.com/alker0/chezmoi.vim.git"
+    refreshPeriod = "168h"
