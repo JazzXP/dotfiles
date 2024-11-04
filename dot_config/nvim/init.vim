@@ -16,6 +16,7 @@ Plug 'nvim-tree/nvim-web-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'xiyaowong/transparent.nvim'
 call plug#end()
 
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
