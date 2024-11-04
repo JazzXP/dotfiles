@@ -1,0 +1,10 @@
+{{ $email := promptString "email" -}}
+{{ $email := promptString "name" -}}
+[git]
+  autoCommit = true
+  autoPush = true
+[edit]
+  command = "nvim"
+[data]
+    email = {{ $email | quote }}
+    name = {{ $name | quote }}
