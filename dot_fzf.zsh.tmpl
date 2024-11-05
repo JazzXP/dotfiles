@@ -6,8 +6,12 @@ fi
 
 # Auto-completion
 # ---------------
+{{ if eq .chezmoi.os "darwin }}
 source "/opt/homebrew/opt/fzf/shell/completion.zsh"
 
 # Key bindings
 # ------------
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+{{ else }}
+
+{{ end }}
