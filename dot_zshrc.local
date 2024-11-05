@@ -1,4 +1,0 @@
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
