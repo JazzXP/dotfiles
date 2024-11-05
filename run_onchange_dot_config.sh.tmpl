@@ -1,0 +1,5 @@
+{{ if eq .chezmoi.os "linux" }}
+if [ -d /mnt/c/Users/SamDickinson ]; then
+  cp -r ~/.config /mnt/c/Users/SamDickinson
+fi
+{{ end }}
