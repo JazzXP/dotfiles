@@ -1,5 +1,6 @@
 {{ $email := promptString "email" -}}
 {{ $name := promptString "name" -}}
+{{ $location := promptString "location (work/home)" -}}
 [git]
   autoCommit = true
   autoPush = true
@@ -8,3 +9,5 @@
 [data]
     email = {{ $email | quote }}
     name = {{ $name | quote }}
+    location = {{ $location | quote }}
+
