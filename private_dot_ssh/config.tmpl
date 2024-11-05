@@ -2,7 +2,19 @@ Include ~/.orbstack/ssh/config
 
 Host github.com
   AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_ed25519
+{{ if eq $location "work" }} 
+  IdentityFile ~/.ssh/id_ed25519_shine
+{{ else }}
+  IdentityFile ~/.ssh/id_ed25519_personal
+{{ end }}
+Host personal.github.com
+  Hostname github.com
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519_personal
+Host work.github.com
+  Hostname github.com
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519_shine
 Host sdickinson.com
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
