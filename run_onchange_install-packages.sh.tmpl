@@ -24,14 +24,8 @@ sudo apt install git
 sudo apt install thefuck
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
-brew install 1password-cli
-brew install lsd
-brew install jq
-brew install fzf
-brew install git
-brew install neovim
-brew install --cask wezterm
-brew install thefuck
+brew install -q 1password-cli lsd jq fzf git neovim thefuck
+brew install -q --cask wezterm
 {{ end -}}
 op read "op://Private/Sdickinson Server Private Key/private key" > ~/.ssh/id_ed25519_personal
 op read "op://Private/Sdickinson Server Private Key/public key" > ~/.ssh/id_ed25519_personal.pub
