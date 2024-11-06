@@ -6,7 +6,6 @@ local projects = require 'projects'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-
 local function move_pane(key, direction)
   return {
     key = key,
@@ -19,7 +18,8 @@ end
 config.set_environment_variables = {
   PATH = '/opt/homebrew/bin:' .. os.getenv('PATH')
 }
-config.color_scheme = 'Solarized Dark Higher Contrast'
+-- config.color_scheme = 'Solarized Dark Higher Contrast'
+config.color_scheme = 'Atelier Dune (base16)'
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 {{ if eq .chezmoi.os "darwin" }}
 config.window_background_opacity = 0.85
@@ -27,11 +27,9 @@ config.macos_window_background_blur = 30
 {{ else }}
 config.window_background_opacity = 0.97
 {{ end }}
--- require("wez-tmux.plugin").apply_to_config(config, {})
 local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
 
 config.keys = {
-  -- ... add these new entries to your config.keys table
   {
     key = ',',
     mods = 'SUPER',
@@ -40,7 +38,7 @@ config.keys = {
       args = { 'vim', wezterm.config_file },
     },
   },
-  {
+  { -- So we can have a nice responsive view of the leader key
     key = 'b',
     mods = 'CTRL',
     action = wezterm.action_callback(function (win, pane) tabline.refresh(win, pane) end)
