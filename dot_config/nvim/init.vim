@@ -9,6 +9,10 @@ set shiftwidth=2
 set backspace=indent,eol,start
 set encoding=UTF-8
 set showmatch
+set ignorecase
+set hlsearch
+set wildmode=longest,list
+set cc=88
 
 call plug#begin()
 Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
