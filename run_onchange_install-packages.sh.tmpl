@@ -13,16 +13,9 @@ curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
   curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
   sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg && \
   sudo apt update && sudo apt install 1password-cli
-eval $(op account add --address my.1password.com --email sdickinson@gmail.com --signin)
+eval $(op account add --address my.1password.com --email sdickinson@gmail.com --secret-key {{ .opsecret }}  --signin)
 
-sudo apt install wezterm
-sudo apt install neovim
-sudo apt install lsd
-sudo apt install jq
-sudo apt install fzf
-sudo apt install git
-sudo apt install thefuck
-sudo apt install bat
+sudo apt install wezterm neovim lsd jq fzf git thefuck bat
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 brew install -q 1password-cli lsd jq fzf git neovim thefuck bat
