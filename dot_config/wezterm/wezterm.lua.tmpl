@@ -66,12 +66,20 @@ config.keys = {
   },
   {
     key = '%',
+    {{ if eq .chezmoi.os "linux" }}
     mods = 'LEADER|SHIFT',
+    {{ else }}
+    mods = 'LEADER',
+    {{ end }}
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
   {
     key = 't',
+    {{ if eq .chezmoi.os "linux" }}
+    mods = 'LEADER|SHIFT',
+    {{ else }}
     mods = 'LEADER',
+    {{ end }}
     action = wezterm.action.SpawnTab 'CurrentPaneDomain',
   },
   move_pane('DownArrow', 'Down'),
