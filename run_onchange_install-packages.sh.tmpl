@@ -22,9 +22,10 @@ sudo apt install jq
 sudo apt install fzf
 sudo apt install git
 sudo apt install thefuck
+sudo apt install bat
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
-brew install -q 1password-cli lsd jq fzf git neovim thefuck
+brew install -q 1password-cli lsd jq fzf git neovim thefuck bat
 brew install -q --cask wezterm
 {{ end -}}
 op read "op://Private/Sdickinson Server Private Key/private key" > ~/.ssh/id_ed25519_personal
