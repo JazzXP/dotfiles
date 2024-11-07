@@ -1,6 +1,7 @@
 {{ $email := promptString "email" -}}
 {{ $name := promptString "name" -}}
 {{ $location := promptString "location (work/home)" -}}
+{{ $opsecret := promptString "1Password secret key" -}}
 [git]
   autoCommit = true
   autoPush = true
@@ -10,4 +11,4 @@
     email = {{ $email | quote }}
     name = {{ $name | quote }}
     location = {{ $location | quote }}
-
+    opsecret = {{ $opsecret | quote }}
