@@ -1,5 +1,5 @@
 #!/bin/sh
-{{ if eq .chezmoi.os "linux" }}
+{{ if (and (eq .chezmoi.os "linux") (ne .location "server")) }}
 if [ -d /mnt/c/Users/SamDickinson ]; then
   cp -r ~/.config /mnt/c/Users/SamDickinson
 fi
