@@ -57,7 +57,7 @@ if [[ $KITTY_WINDOW_ID ]]; then
 
 # 2. Use chafa with Sixel output
 elif command -v chafa >/dev/null; then
-  chafa -s "$dim" "$file"
+  chafa -f iterm -s "$dim" "$file"
   # Add a new line character so that fzf can display multiple images in the preview window
   echo
 
