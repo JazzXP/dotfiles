@@ -121,15 +121,15 @@ config.key_tables = {
 local function showLeader (window)
   local icons = '';
   if window:leader_is_active() then
-    icons = icons + '🚀'
+    icons = icons .. '🚀'
   end
   if window:active_key_table() == "resize_panes" then
-    icons = icons + '🤏'
+    icons = icons .. '🤏'
   end
   if string.len(icons) > 1 then
-    return ' ' + icons + ' '
+    return ' ' .. icons .. ' '
   elseif string.len(icons) > 0 then
-    return '  ' + icons + '  '
+    return '  ' .. icons .. '  '
   end
   return '      '
 end
