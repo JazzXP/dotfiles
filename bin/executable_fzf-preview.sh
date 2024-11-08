@@ -32,7 +32,7 @@ if [[ ! $type =~ image/ ]]; then
     exit
   fi
 
-  ${batname} --style="${BAT_STYLE:-numbers}" --color=always --pager=never -- "$file"
+  ${batname} --style="${BAT_STYLE:-numbers}" --theme=ansi --color=always --pager=never -- "$file"
   exit
 fi
 
