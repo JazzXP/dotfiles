@@ -98,12 +98,12 @@ config.keys = {
     key = 'r',
     mods = 'LEADER',
     action = wezterm.action_callback(function (win, pane) 
-      tabline.refresh(win, pane) 
       act.ActivateKeyTable {
         name = 'resize_panes',
         one_shot = false,
         timeout_milliseconds = 2000,
       }
+      tabline.refresh(win, pane) 
     end)
   },
   move_pane('DownArrow', 'Down'),
