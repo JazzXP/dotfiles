@@ -16,6 +16,5 @@ fi
 echo "$TODAY" >"$TIMESTAMP_FILE"
 
 # Place the commands you want to run once per day here
-echo "Running daily tasks..."
-# Example command
 neofetch
+chezmoi update
