@@ -100,7 +100,7 @@ config.keys = {
       name = 'resize_panes',
       one_shot = false,
       timeout_milliseconds = 2000,
-    },
+    }
   }
   move_pane('DownArrow', 'Down'),
   move_pane('UpArrow', 'Up'),
@@ -112,7 +112,7 @@ config.key_tables = {
     resize_panes = {
         resize_pane('DownArrow', 'Down'),
         resize_pane('UpArrow', 'Up'),
-        resize_pane('h', 'Left'),
+        resize_pane('LeftArrow', 'Left'),
         resize_pane('RightArrow', 'Right'),
     },
 }
