@@ -119,11 +119,19 @@ config.key_tables = {
 }
 
 local function showLeader (window)
-  local leader = '    '
+  local icons = '';
   if window:leader_is_active() then
-    leader = ' 🚀 '
+    icons = icons + '🚀'
   end
-  return leader
+  if window:active_key_table() == "resize_panes" then
+    icons = icons + '🤏'
+  end
+  if string.len(icons) > 1 then
+    return ' ' + icons + ' '
+  else if string.len(icons) > 0 then
+    return '  ' + icons + '  '
+  end
+  return '      '
 end
 
 tabline.setup({
