@@ -145,6 +145,9 @@ listening() {
 
 eval $(thefuck --alias)
 eval $(wezterm shell-completion --shell zsh)
+batdiff() {
+    git diff --name-only --relative --diff-filter=d | xargs bat --diff
+}
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/sdickinson/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
