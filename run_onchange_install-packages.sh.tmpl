@@ -15,10 +15,10 @@ curl -sS https://downloads.1password.com/linux/keys/1password.asc |
   sudo apt update && sudo apt install 1password-cli
 eval $(op account add --address my.1password.com --email sdickinson@gmail.com --secret-key {{ .opsecret }} --signin)
 
-sudo apt install wezterm neovim lsd jq fzf git thefuck bat chafa
+sudo apt install wezterm neovim lsd jq fzf git thefuck bat chafa neofetch tldr
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
-brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa
+brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa neofetch tldr
 brew install -q --cask wezterm
 {{ end -}}
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
