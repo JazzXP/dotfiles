@@ -42,7 +42,7 @@ alias ls='lsd'
 alias dockerclear='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 alias dockercleardangling='docker rmi $(docker images -q -f dangling=true)'
 alias vim=nvim
-{{ if .chezmoi.os "darwin" }}
+{{ if eq .chezmoi.os "darwin" }}
 alias cat="bat --theme=ansi"
 {{ else }}
 alias cat="batcat --theme=ansi"
