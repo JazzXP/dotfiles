@@ -1,12 +1,14 @@
-{{ $email := promptString "email" -}}
-{{ $name := promptString "name" -}}
-{{ $location := promptString "location (work/home)" -}}
-{{ $opsecret := promptString "1Password secret key" -}}
+{{- $email := promptStringOnce "email" -}}
+{{- $name := promptStringOnce "name" -}}
+{{- $choices := list "work" "home" "server" -}}
+{{- $location := promptChoiceOnce "location" $choices -}}
+{{- $opsecret := promptStringOnce "1Password secret key" -}}
 [git]
   autoCommit = true
   autoPush = true
 [edit]
   command = "nvim"
+  apply = true
 [data]
     email = {{ $email | quote }}
     name = {{ $name | quote }}
