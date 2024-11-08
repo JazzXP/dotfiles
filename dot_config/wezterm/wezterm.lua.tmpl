@@ -2,6 +2,7 @@
 local wezterm = require 'wezterm'
 local mux = wezterm.mux
 local projects = require 'projects'
+local act = wezterm.action
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -10,14 +11,14 @@ local function move_pane(key, direction)
   return {
     key = key,
     mods = 'LEADER',
-    action = wezterm.action.ActivatePaneDirection(direction),
+    action = act.ActivatePaneDirection(direction),
   }
 end
 
 local function resize_pane(key, direction)
   return {
     key = key,
-    action = wezterm.action.AdjustPaneSize { direction, 3 }
+    action = act.AdjustPaneSize { direction, 3 }
   }
 end
 
@@ -45,7 +46,7 @@ config.keys = {
   {
     key = ',',
     mods = 'SUPER',
-    action = wezterm.action.SpawnCommandInNewTab {
+    action = act.SpawnCommandInNewTab {
       cwd = wezterm.home_dir,
       args = { 'vim', wezterm.config_file },
     },
@@ -58,7 +59,7 @@ config.keys = {
   {
     key = 'b',
     mods = 'LEADER|CTRL',
-    action = wezterm.action.SendKey { key = 'b', mods = 'CTRL' },
+    action = act.SendKey { key = 'b', mods = 'CTRL' },
   },
   {
     key = 'p',
@@ -68,7 +69,7 @@ config.keys = {
   {
     key = 'f',
     mods = 'LEADER',
-    action = wezterm.action.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' },
+    action = act.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' },
   },
   {
     key = '"',
@@ -77,7 +78,7 @@ config.keys = {
     {{ else }}
     mods = 'LEADER',
     {{ end }}
-    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    action = act.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   {
     key = '%',
@@ -86,17 +87,17 @@ config.keys = {
     {{ else }}
     mods = 'LEADER',
     {{ end }}
-    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+    action = act.SplitVertical { domain = 'CurrentPaneDomain' },
   },
   {
     key = 't',
     mods = 'LEADER',
-    action = wezterm.action.SpawnTab 'CurrentPaneDomain',
+    action = act.SpawnTab 'CurrentPaneDomain',
   },
   { 
     key = 'r',
     mods = 'LEADER',
-    action = wezterm.action.ActivateKeyTable {
+    action = act.ActivateKeyTable {
       name = 'resize_panes',
       one_shot = false,
       timeout_milliseconds = 2000,
