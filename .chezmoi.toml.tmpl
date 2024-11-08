@@ -1,8 +1,8 @@
-{{- $email := promptStringOnce "email" -}}
-{{- $name := promptStringOnce "name" -}}
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $name := promptStringOnce . "name" "Your name" -}}
 {{- $choices := list "work" "home" "server" -}}
-{{- $location := promptChoiceOnce "location" $choices -}}
-{{- $opsecret := promptStringOnce "1Password secret key" -}}
+{{- $location := promptChoiceOnce . "location" "Location" $choices -}}
+{{- $opsecret := promptStringOnce . "opsecret" "1Password secret key" -}}
 [git]
   autoCommit = true
   autoPush = true
