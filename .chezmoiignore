@@ -1,0 +1,3 @@
+{{- if eq .location "server" }}
+~/.config/nvim
+{{- end }}
