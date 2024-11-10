@@ -21,6 +21,10 @@ sudo apt install neovim lsd jq fzf git tldr
 {{ else if eq .chezmoi.os "darwin" -}}
 brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa neofetch tldr
 brew install -q --cask wezterm
+brew install -q --cask obsidian
+{{ if eq .location "work" -}}
+brew install --cask slack
+{{ end -}}
 {{ end -}}
 {{ if ne .location "server" -}}
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
