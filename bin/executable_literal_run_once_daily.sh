@@ -16,5 +16,5 @@ fi
 echo "$TODAY" >"$TIMESTAMP_FILE"
 
 # Place the commands you want to run once per day here
-neofetch
+fastfetch
 chezmoi update
