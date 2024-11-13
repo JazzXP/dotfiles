@@ -35,7 +35,8 @@ export LDFLAGS="$LDFLAGS -L/usr/local/opt/ruby/lib"
 export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/ruby/lib/pkgconfig"
 export TERM=xterm-256color
-export MANPAGER="sh -c 'col -bx | bat --theme=ansi -l man -p'"
+export BAT_THEME=ansi
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 ## Aliases
 alias ls='lsd'
@@ -43,9 +44,9 @@ alias dockerclear='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 alias dockercleardangling='docker rmi $(docker images -q -f dangling=true)'
 alias vim=nvim
 {{ if eq .chezmoi.os "darwin" }}
-alias cat="bat --theme=ansi"
+alias cat="bat"
 {{ else }}
-alias cat="batcat --theme=ansi"
+alias cat="batcat"
 {{ end }}
 alias imgcat="wezterm imgcat"
 
