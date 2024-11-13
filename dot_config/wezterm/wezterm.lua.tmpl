@@ -42,6 +42,7 @@ local function get_process_name(tab)
 
   return process_name
 end
+{{ if eq .chezmoi.os "linux" -}}
 local function get_process(tab)
   local process_icons = {
         ["docker"] = {
@@ -143,6 +144,7 @@ wezterm.on("format-tab-title", function(tab)
     { Foreground = { Color = colors.base } },
   })
 end)-- This is where you actually apply your config choice
+{{ end -}}
 config.set_environment_variables = {
   PATH = '/opt/homebrew/bin:' .. os.getenv('PATH')
 }
