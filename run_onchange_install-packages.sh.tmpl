@@ -16,16 +16,22 @@ curl -sS https://downloads.1password.com/linux/keys/1password.asc |
 eval $(op account add --address my.1password.com --email sdickinson@gmail.com --secret-key {{ .opsecret }} --signin)
 
 sudo apt install wezterm neovim lsd jq fzf git thefuck bat chafa fastfetch tldr ripgrep
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+sudo add-apt-repository ppa:wslutilities/wslu
+sudo apt update
+sudo apt install wslu
+{{   end -}}
 {{ else if eq .location "server" -}}
 sudo apt install neovim lsd jq fzf git tldr
 {{ else if eq .chezmoi.os "darwin" -}}
 brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa fastfetch tldr ripgrep
 brew install -q --cask wezterm
 brew install -q --cask obsidian
-{{ if eq .location "work" -}}
+{{   if eq .location "work" -}}
 brew install --cask slack
+{{   end -}}
 {{ end -}}
-{{ end -}}
+
 {{ if ne .location "server" -}}
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 op read "op://Private/Sdickinson Server Private Key/private key" >~/.ssh/id_ed25519_personal
