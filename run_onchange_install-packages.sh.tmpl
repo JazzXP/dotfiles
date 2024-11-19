@@ -1,41 +1,39 @@
 #!/bin/sh
 {{ if (and (eq .chezmoi.os "linux") (ne .location "server")) -}}
-curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
-echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-curl -sS https://downloads.1password.com/linux/keys/1password.asc |
-  sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg &&
-  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/$(dpkg --print-architecture) stable main" |
-  sudo tee /etc/apt/sources.list.d/1password.list &&
-  sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/ &&
-  curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol |
-  sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol &&
-  sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22 &&
+  curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
+  echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
   curl -sS https://downloads.1password.com/linux/keys/1password.asc |
-  sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg &&
-  sudo apt update && sudo apt install 1password-cli
-eval $(op account add --address my.1password.com --email sdickinson@gmail.com --secret-key {{ .opsecret }} --signin)
-
-sudo apt install wezterm neovim lsd jq fzf git thefuck bat chafa fastfetch tldr ripgrep
-{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
-sudo add-apt-repository ppa:wslutilities/wslu
-sudo apt update
-sudo apt install wslu
-{{   end -}}
+    sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg &&
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/$(dpkg --print-architecture) stable main" |
+    sudo tee /etc/apt/sources.list.d/1password.list &&
+    sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/ &&
+    curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol |
+    sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol &&
+    sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22 &&
+    curl -sS https://downloads.1password.com/linux/keys/1password.asc |
+    sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg &&
+    sudo apt update && sudo apt install 1password-cli wezterm neovim lsd jq fzf git thefuck bat chafa fastfetch tldr ripgrep
+  eval $(op account add --address my.1password.com --email sdickinson@gmail.com --secret-key {{ .opsecret }} --signin)
+  {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+    sudo add-apt-repository ppa:wslutilities/wslu
+    sudo apt update
+    sudo apt install wslu
+  {{   end -}}
 {{ else if eq .location "server" -}}
-sudo apt install neovim lsd jq fzf git tldr
+  sudo apt install lsd jq fzf git 
 {{ else if eq .chezmoi.os "darwin" -}}
-brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa fastfetch tldr ripgrep
-brew install -q --cask wezterm
-brew install -q --cask obsidian
-{{   if eq .location "work" -}}
-brew install --cask slack
-{{   end -}}
+  brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa fastfetch tldr ripgrep
+  brew install -q --cask wezterm
+  brew install -q --cask obsidian
+  {{   if eq .location "work" -}}
+    brew install --cask slack
+  {{   end -}}
 {{ end -}}
 
 {{ if ne .location "server" -}}
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-op read "op://Private/Sdickinson Server Private Key/private key" >~/.ssh/id_ed25519_personal
-op read "op://Private/Sdickinson Server Private Key/public key" >~/.ssh/id_ed25519_personal.pub
-op read "op://Private/Shine Github Key/private key" >~/.ssh/id_ed25519_shine
-op read "op://Private/Shine Github Key/public key" >~/.ssh/id_ed25519_shine.pub
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  op read "op://Private/Sdickinson Server Private Key/private key" >~/.ssh/id_ed25519_personal
+  op read "op://Private/Sdickinson Server Private Key/public key" >~/.ssh/id_ed25519_personal.pub
+  op read "op://Private/Shine Github Key/private key" >~/.ssh/id_ed25519_shine
+  op read "op://Private/Shine Github Key/public key" >~/.ssh/id_ed25519_shine.pub
 {{ end -}}
