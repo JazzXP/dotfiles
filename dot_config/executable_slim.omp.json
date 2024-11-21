@@ -113,17 +113,6 @@
           "style": "diamond",
           "template": " \ue77f {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }}<#7a7a7a> \ue0b3</>",
           "type": "dotnet"
-        },
-        {
-          "background": "#2f2f2f",
-          "foreground": "#fafafa",
-          "properties": {
-            "time_format": "15:04:05"
-          },
-          "style": "diamond",
-          "template": " {{ .CurrentDate | date .Format }}<#007ACC> \ue641 </>",
-          "trailing_diamond": "\u2593\ue0c6",
-          "type": "time"
         }
       ],
       "type": "prompt"
@@ -162,9 +151,7 @@
         },
         {
           "foreground": "#9FD356",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}#E84855{{ end }}"
-          ],
+          "foreground_templates": ["{{ if gt .Code 0 }}#E84855{{ end }}"],
           "properties": {
             "always_enabled": true
           },
