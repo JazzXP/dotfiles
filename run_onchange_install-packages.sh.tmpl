@@ -19,10 +19,11 @@
     sudo apt update
     sudo apt install wslu
   {{   end -}}
+  curl -s https://ohmyposh.dev/install.sh | bash -s
 {{ else if eq .location "server" -}}
   sudo apt install lsd jq fzf git 
 {{ else if eq .chezmoi.os "darwin" -}}
-  brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa fastfetch tldr ripgrep font-fira-code-nerd-font
+  brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa fastfetch tldr ripgrep font-fira-code-nerd-font jandedobbeleer/oh-my-posh/oh-my-posh
   brew install -q --cask wezterm
   brew install -q --cask obsidian
   {{   if eq .location "work" -}}
