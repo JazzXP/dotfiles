@@ -116,7 +116,8 @@
           "type": "dotnet"
         }
       ],
-      "type": "prompt"
+      "type": "prompt",
+      "leading_diamond": "\ue0b2"
     },
     {
       "alignment": "left",
