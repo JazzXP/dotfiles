@@ -6,13 +6,25 @@ return {
       require("codestats-nvim").setup({
         {{ if eq .chezmoi.os "linux" -}}
           {{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
-            token = "SFMyNTY.U21GNmVsaFEjI01qTTNOekE9.P_ShLs6TICQxUpM9l7Ip3AaPeXeyujb2-enGU-6DsnY",
+            token = "{{ range (onepassword "dr3bexab4wvloeqcpwrsoubi7e").fields -}}
+            {{   if eq .label "SERV"  -}}
+            {{     .value -}}
+            {{   end -}}
+            {{ end }}"
           {{ end -}}
         {{ else if eq .chezmoi.os "darwin" -}}
           {{ if eq .location "work" -}}
-            token = "SFMyNTY.U21GNmVsaFEjI01qTTNORE09.2P7d7G_HJiZX2-FNEiehHDlcNjJPWDF6E2q7x3q24BE",
+            token = "{{ range (onepassword "dr3bexab4wvloeqcpwrsoubi7e").fields -}}
+            {{   if eq .label "Shine"  -}}
+            {{     .value -}}
+            {{   end -}}
+            {{ end }}"
           {{ else -}}
-            token = "SFMyNTY.U21GNmVsaFEjI01qTTNOREE9.nqnexwCLuxdPrtZlFrq6ncJY90kyXFipaJAhgGEo9es",
+            token = "{{ range (onepassword "dr3bexab4wvloeqcpwrsoubi7e").fields -}}
+            {{   if eq .label "Macbook Pro"  -}}
+            {{     .value -}}
+            {{   end -}}
+            {{ end }}"
           {{ end -}}
         {{ end -}}
       })
