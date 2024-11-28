@@ -1,3 +1,4 @@
+local codestats = require('codestats')
 return {
   {
     'liljaylj/codestats.nvim',
@@ -5,7 +6,7 @@ return {
     event = { 'TextChanged', 'InsertEnter' },
     cmd = { 'CodeStatsXpSend', 'CodeStatsProfileUpdate' },
     config = function()
-      require("codestats").setup({
+      codestats.setup({
           username = 'JazzXP',  -- needed to fetch profile data
           base_url = 'https://codestats.net',  -- codestats.net base url
         {{ if eq .chezmoi.os "linux" -}}
