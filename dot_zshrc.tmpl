@@ -1,3 +1,6 @@
+## Start with path so everything else below works
+export PATH=/usr/local/opt/vim/bin:/usr/local/opt/ruby/bin:/usr/local/opt/git/bin/:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH:~/bin
+
 ~/bin/run_once_daily.sh
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -27,7 +30,6 @@ source $ZSH/oh-my-zsh.sh
 . "$HOME/.cargo/env"
 # User configuration
 ## Exports
-export PATH=/usr/local/opt/vim/bin:/usr/local/opt/ruby/bin:/usr/local/opt/git/bin/:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH:~/bin
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 {{ if eq .chezmoi.os "darwin" }}
 export PATH=$PATH:/Applications/WezTerm.app/Contents/MacOS
@@ -99,11 +101,15 @@ unset __conda_setup
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# export PNPM_HOME="/Users/sdickinson/Library/pnpm"
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
+{{ if eq .chezmoi.os "darwin" -}}
+export PNPM_HOME="/Users/sdickinson/Library/pnpm"
+{{ else if eq .chezmoi.os "linux" -}}
+export PNPM_HOME="/home/sdickinson/.local/share/pnpm"
+{{ end -}}
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 #
 # eval "$(starship init zsh)"
 # eval "$(oh-my-posh init zsh)"
