@@ -1,7 +1,6 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    version = "*",
     opts = function(_, opts)
       local on_publish_diagnostics = vim.lsp.diagnostic.on_publish_diagnostics
       opts.servers.bashls = vim.tbl_deep_extend("force", opts.servers.bashls or {}, {
