@@ -79,8 +79,13 @@ listening() {
     fi
 }
 
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+   source <(fzf --zsh)
+{{   else }}
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+{{   end }}
+{{ end }}
 batdiff() {
     git diff --name-only --relative --diff-filter=d | xargs bat --diff
 }
