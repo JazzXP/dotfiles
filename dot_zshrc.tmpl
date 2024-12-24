@@ -33,11 +33,14 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 {{ if eq .chezmoi.os "darwin" }}
 export PATH=$PATH:/Applications/WezTerm.app/Contents/MacOS
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/ruby/include"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/ruby/lib/pkgconfig"
 {{ else }}
-{{ end }}
 export LDFLAGS="$LDFLAGS -L/usr/local/opt/ruby/lib"
 export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/ruby/lib/pkgconfig"
+{{ end }}
 export TERM=xterm-256color
 export BAT_THEME=ansi
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
