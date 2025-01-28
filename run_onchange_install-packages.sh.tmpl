@@ -14,16 +14,22 @@
     sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg &&
     sudo apt update && sudo apt install 1password-cli wezterm neovim lsd jq fzf git thefuck bat chafa fastfetch tldr ripgrep
   eval $(op account add --address my.1password.com --email sdickinson@gmail.com --secret-key {{ .opsecret }} --signin)
+  if ! command -v rustup 2>&1 >/dev/null
+  then
+      curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+      rustup update
+  fi
   {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
     sudo add-apt-repository ppa:wslutilities/wslu
     sudo apt update
     sudo apt install wslu
+    cargo install --locked zellij
   {{   end -}}
   curl -s https://ohmyposh.dev/install.sh | bash -s
 {{ else if eq .location "server" -}}
   sudo apt install lsd jq fzf git 
 {{ else if eq .chezmoi.os "darwin" -}}
-  brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa fastfetch tldr ripgrep font-fira-code-nerd-font jandedobbeleer/oh-my-posh/oh-my-posh
+  brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa fastfetch tldr ripgrep font-fira-code-nerd-font jandedobbeleer/oh-my-posh/oh-my-posh zellij
   brew install -q --cask wezterm
   brew install -q --cask obsidian
   {{   if eq .location "work" -}}
