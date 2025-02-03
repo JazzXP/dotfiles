@@ -1,5 +1,9 @@
 {{ if eq .chezmoi.os "darwin" }}
 Include ~/.orbstack/ssh/config
+Host midway-station
+  Hostname midway-station
+  User biqu
+  IdentityFile ~/.ssh/id_ed25519
 {{ end }}
 {{ if ne .location "server" }}
 Host github.com
