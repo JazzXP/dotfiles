@@ -88,6 +88,8 @@ listening() {
 {{   else }}
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 {{   end }}
+{{ else }}
+  source <(fzf --zsh)
 {{ end }}
 batdiff() {
     git diff --name-only --relative --diff-filter=d | xargs bat --diff
