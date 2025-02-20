@@ -1,7 +1,43 @@
 #!/bin/sh
-{{ if (and (eq .chezmoi.os "linux") (ne .location "server")) -}}
-  curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /etc/apt/keyrings/wezterm-fury.gpg
-  echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+{{ if or (eq .chezmoi.os "darwin") (eq .chezmzio.arch "amd64") -}}
+if command -v brew &2>1 > /dev/null; then
+  brew update
+  brew upgrade
+else
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  brew tap homebrew/cask
+fi
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{  range .packages.core.brew -}}
+brew {{ . | quote }}
+{{  end -}}
+{{  range .packages.core.cask -}}
+cask {{ . | quote }}
+{{  end -}}
+{{  if (eq .location "home") -}}
+{{    range .packages.home.brew -}}
+brew {{ . | quote }}
+{{    end -}}
+{{    range .packages.home.cask -}}
+cask {{ . | quote }}
+{{    end -}}
+{{  else if eq .location "work" -}}
+{{    range .packages.work.brew -}}
+brew {{ . | quote }}
+{{    end -}}
+{{    range .packages.work.cask -}}
+cask {{ . | quote }}
+{{    end -}}
+{{  else if eq .location "server" -}}
+{{    range .packages.server.brew -}}
+brew {{ . | quote }}
+{{    end -}}
+{{    range .packages.server.cask -}}
+cask {{ . | quote }}
+{{    end -}}
+{{  end -}}
+EOF
+{{ else -}}
   curl -sS https://downloads.1password.com/linux/keys/1password.asc |
     sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg &&
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/$(dpkg --print-architecture) stable main" |
@@ -12,31 +48,15 @@
     sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22 &&
     curl -sS https://downloads.1password.com/linux/keys/1password.asc |
     sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg &&
-    sudo apt update && sudo apt install 1password-cli wezterm neovim lsd jq fzf git thefuck bat chafa fastfetch tldr ripgrep
-  eval $(op account add --address my.1password.com --email sdickinson@gmail.com --secret-key {{ .opsecret }} --signin)
-  if ! command -v rustup 2>&1 >/dev/null
-  then
-      curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-      rustup update
-  fi
-  {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
-    sudo add-apt-repository ppa:wslutilities/wslu
-    sudo apt update
-    sudo apt install wslu
-    cargo install --locked zellij
-  {{   end -}}
-  curl -s https://ohmyposh.dev/install.sh | bash -s
-{{ else if eq .location "server" -}}
-  sudo apt install lsd jq fzf git 
-{{ else if eq .chezmoi.os "darwin" -}}
-  brew install -q 1password-cli lsd jq fzf git neovim thefuck bat chafa fastfetch tldr ripgrep font-fira-code-nerd-font jandedobbeleer/oh-my-posh/oh-my-posh zellij
-  brew install -q --cask wezterm
-  brew install -q --cask obsidian
-  {{   if eq .location "work" -}}
-    brew install --cask slack
-  {{   end -}}
+    sudo apt update &&
+    sudo apt install -y {{ join " " .packages.core.apt }} {{ join " " .packages.server.apt }}
 {{ end -}}
+eval $(op account add --address my.1password.com --email sdickinson@gmail.com --secret-key {{ .opsecret }} --signin)
 
+{{ if and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+    sudo add-apt-repository ppa:wslutilities/wslu
+    sudo apt install -y {{ join " " .packages.wsl.apt }}
+{{ end -}}
 {{ if ne .location "server" -}}
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   op read "op://Private/Sdickinson Server Private Key/private key" >~/.ssh/id_ed25519_personal
