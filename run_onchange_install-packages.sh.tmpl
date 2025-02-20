@@ -1,5 +1,5 @@
 #!/bin/sh
-{{ if or (eq .chezmoi.os "darwin") (eq .chezmzio.arch "amd64") -}}
+{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.arch "amd64") -}}
 if command -v brew &2>1 > /dev/null; then
   brew update
   brew upgrade
