@@ -1,0 +1,48 @@
+core:
+  brew:
+    - "git"
+    - "1password-cli"
+    - "lsd"
+    - "jq"
+    - "fzf"
+    - "fastfetch"
+  apt:
+    - "git"
+    - "1password-cli"
+    - "lsd"
+    - "jq"
+    - "fzf"
+    - "fastfetch"
+work:
+  brew:
+    - "wezterm"
+    - "neovim"
+    - "thefuck"
+    - "bat"
+    - "chafa"
+    - "ripgrep"
+  cask:
+    - "wezterm"
+    - "obsidian"
+    - "slack"
+home:
+  brew:
+    - "neovim"
+    - "thefuck"
+    - "bat"
+    - "chafa"
+    - "tldr"
+    - "ripgrep"
+    - "font-fira-code-nerd-font"
+    - "jandedobbeleer/oh-my-posh/oh-my-posh"
+  cask:
+    - "wezterm"
+    - "obsidian"
+server:
+  brew:
+    - "tmux"
+  apt:
+    - "tmux"
+wsl:
+  apt:
+    - "wslu"
