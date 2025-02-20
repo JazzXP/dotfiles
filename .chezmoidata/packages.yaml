@@ -23,6 +23,7 @@ packages:
       - "bat"
       - "chafa"
       - "ripgrep"
+      - "zsh"
     cask:
       - "wezterm"
       - "obsidian"
