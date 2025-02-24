@@ -24,10 +24,13 @@ packages:
       - "chafa"
       - "ripgrep"
       - "zsh"
+      - "jandedobbeleer/oh-my-posh/oh-my-posh"
     cask:
       - "wezterm"
       - "obsidian"
       - "slack"
+      - "font-fira-code-nerd-font"
+      - "font-geist-mono-nerd-font"
   home:
     brew:
       - "neovim"
@@ -39,6 +42,7 @@ packages:
       - "jandedobbeleer/oh-my-posh/oh-my-posh"
     cask:
       - "font-fira-code-nerd-font"
+      - "font-geist-mono-nerd-font"
       - "wezterm"
       - "obsidian"
   server:
