@@ -1,18 +1,22 @@
-{{ if eq .chezmoi.os "darwin" }}
+{{ if eq .location "home" -}}
 Include ~/.orbstack/ssh/config
 Host midway-station
   Hostname midway-station
   User biqu
   IdentityFile ~/.ssh/id_ed25519
-{{ end }}
-{{ if ne .location "server" }}
+Host jumper
+  Hostname jumper
+  User sdickinson
+  IdentityFile ~/.ssh/id_ed25519
+{{ end -}}
+{{ if ne .location "server" -}}
 Host github.com
   AddKeysToAgent yes
-{{ if eq .location "work" }} 
+{{   if eq .location "work" -}} 
   IdentityFile ~/.ssh/id_ed25519_shine
-{{ else }}
+{{   else -}}
   IdentityFile ~/.ssh/id_ed25519_personal
-{{ end }}
+{{   end -}}
 Host personal.github.com
   Hostname github.com
   AddKeysToAgent yes
@@ -27,4 +31,4 @@ Host sdickinson.com
 Host 172.236.35.111
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
-{{ end }}
+{{ end -}}
