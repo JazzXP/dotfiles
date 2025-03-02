@@ -6,6 +6,7 @@ packages:
       - "jq"
       - "fzf"
       - "fastfetch"
+      - "fish"
     cask:
       - "1password-cli"
     apt:
@@ -15,6 +16,7 @@ packages:
       - "jq"
       - "fzf"
       - "fastfetch"
+      - "fish"
   work:
     brew:
       - "wezterm"
