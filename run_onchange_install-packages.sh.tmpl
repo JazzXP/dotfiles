@@ -1,12 +1,16 @@
 #!/bin/sh
 {{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.arch "amd64") -}}
-if command -v brew 2>&1 >/dev/null; then
+if [ command -v brew 2>&1 >/dev/null ]; then
   brew update
   brew upgrade
 else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew tap homebrew/cask
+  {{ if eq .chezmoi.os "linux" -}}
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  {{ end -}}
 fi
+
 brew bundle --no-lock --file=/dev/stdin <<EOF
 {{  range .packages.core.brew -}}
 brew {{ . | quote }}
