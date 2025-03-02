@@ -94,6 +94,9 @@ listening() {
 {{ else }}
   source <(fzf --zsh)
 {{ end }}
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "amd64") -}}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{ end }} 
 batdiff() {
     git diff --name-only --relative --diff-filter=d | xargs cat --diff
 }
