@@ -161,7 +161,7 @@ config.font = wezterm.font("GeistMono NF", { weight = "Regular", stretch = "Norm
 {{ end }}
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 {{ if eq .chezmoi.os "darwin" }}
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.90
 config.macos_window_background_blur = 30
 {{ else }}
 config.window_background_opacity = 0.97
@@ -174,7 +174,7 @@ config.keys = {
     mods = 'SUPER',
     action = act.SpawnCommandInNewTab {
       cwd = wezterm.home_dir,
-      args = { 'vim', wezterm.config_file },
+      args = { 'nvim', wezterm.config_file },
     },
   },
   { -- So we can have a nice responsive view of the leader key
@@ -251,6 +251,10 @@ config.keys = {
   move_pane('UpArrow', 'Up'),
   move_pane('LeftArrow', 'Left'),
   move_pane('RightArrow', 'Right'),
+  move_pane('j', 'Down'),
+  move_pane('k', 'Up'),
+  move_pane('h', 'Left'),
+  move_pane('l', 'Right'),
 }
 
 config.key_tables = {
@@ -259,6 +263,10 @@ config.key_tables = {
         resize_pane('UpArrow', 'Up'),
         resize_pane('LeftArrow', 'Left'),
         resize_pane('RightArrow', 'Right'),
+        resize_pane('j', 'Down'),
+        resize_pane('k', 'Up'),
+        resize_pane('h', 'Left'),
+        resize_pane('l', 'Right'),
     },
 }
 
