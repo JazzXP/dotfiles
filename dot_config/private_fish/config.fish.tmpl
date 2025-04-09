@@ -1,10 +1,13 @@
 set -g PATH /usr/local/opt/vim/bin /usr/local/opt/ruby/bin /usr/local/opt/git/bin/ /usr/local/opt/gnu-tar/libexec/gnubin $PATH /home/sdickinson/bin/
 {{ if eq .chezmoi.os "darwin" }}
 set -g PATH $PATH /Applications/WezTerm.app/Contents/MacOS
-set -g PNPM_HOME /Users/sdickinson/Library/pnpm
 set -g LDFLAGS "$LDFLAGS -L/opt/homebrew/opt/ruby/lib"
 set -g CPPFLAGS "$CPPFLAGS -I/opt/homebrew/opt/ruby/include"
 set -g PKG_CONFIG_PATH "$PKG_CONFIG_PATH:/opt/homebrew/opt/ruby/lib/pkgconfig"
+set -gx PNPM_HOME $HOME/Library/pnpm
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
 {{ end }}
 {{ if eq .chezmoi.os "linux" }}
 nvm use 22
