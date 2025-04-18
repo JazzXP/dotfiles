@@ -1,34 +1,32 @@
 {{ if eq .location "home" -}}
 Include ~/.orbstack/ssh/config
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 Host midway-station
   Hostname midway-station
   User biqu
-  IdentityFile ~/.ssh/id_ed25519
 Host jumper
   Hostname jumper
   User sdickinson
-  IdentityFile ~/.ssh/id_ed25519
+Host main.server.sdickinson.com
+  User sdickinson
 {{ end -}}
 {{ if ne .location "server" -}}
 Host github.com
-  AddKeysToAgent yes
+  IdentitiesOnly yes
 {{   if eq .location "work" -}} 
-  IdentityFile ~/.ssh/id_ed25519_shine
+  IdentityFile ~/.ssh/id_ed25519_shine.pub
 {{   else -}}
-  IdentityFile ~/.ssh/id_ed25519_personal
+  IdentityFile ~/.ssh/id_ed25519_personal.pub
 {{   end -}}
 Host personal.github.com
   Hostname github.com
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_ed25519_personal
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_ed25519_personal.pub
 Host work.github.com
   Hostname github.com
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_ed25519_shine
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_ed25519_shine.pub
 Host sdickinson.com
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_ed25519
-Host 172.236.35.111
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_ed25519
+  User sdickinson
 {{ end -}}
