@@ -2,7 +2,11 @@
 export PATH=~/bin:/usr/local/opt/vim/bin:/usr/local/opt/ruby/bin:/usr/local/opt/git/bin/:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 
 ~/bin/run_once_daily.sh
-source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+zle -N menu-search
+zle -N recent-paths
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/bin/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -85,15 +89,6 @@ listening() {
     fi
 }
 
-{{ if eq .chezmoi.os "linux" }}
-{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
-   source <(fzf --zsh)
-{{   else }}
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-{{   end }}
-{{ else }}
-  source <(fzf --zsh)
-{{ end }}
 {{ if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "amd64") -}}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{ end }} 
@@ -133,4 +128,29 @@ esac
 # eval "$(oh-my-posh init zsh)"
 # eval "$(oh-my-posh init zsh --config ~/.config/multiverse-neon.omp.json)"
 eval "$(oh-my-posh init zsh --config ~/.config/slim.omp.json)"
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+bindkey              '^I' menu-select
+bindkey "$terminfo[kcbt]" menu-select
+bindkey -M menuselect              '^I'         menu-complete
+bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
+bindkey -a \
+    "^P"    .up-history \
+    "^N"    .down-history \
+    "k"     .up-line-or-history \
+    "^[OA"  .up-line-or-history \
+    "^[[A"  .up-line-or-history \
+    "j"     .down-line-or-history \
+    "^[OB"  .down-line-or-history \
+    "^[[B"  .down-line-or-history \
+    "/"     .vi-history-search-backward \
+    "?"     .vi-history-search-forward \
+    #
+
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+   source <(fzf --zsh)
+{{   else }}
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+{{   end }}
+{{ else }}
+  source <(fzf --zsh)
+{{ end }}

@@ -109,10 +109,17 @@
           "type": "dotnet"
         },
         {
+          "type": "docker",
+          "style": "diamond",
+          "background": "#3f3f3f",
+          "foreground": "#0C93E7",
+          "template": "  {{ .Context }} "
+        },
+        {
           "background": "#3f3f3f",
           "foreground": "#E47911",
           "style": "diamond",
-          "template": "\ue6a3 {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }}",
+          "template": " \ue6a3 {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} ",
           "type": "aws"
         }
       ],
