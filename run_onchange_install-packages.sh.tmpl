@@ -8,10 +8,9 @@ else
   {{ if eq .chezmoi.os "linux" -}}
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   {{ end -}}
-  brew tap homebrew/cask
 fi
 
-brew bundle --no-lock --file=/dev/stdin <<EOF
+brew bundle install --file=/dev/stdin <<EOF
 {{  range .packages.core.brew -}}
 brew {{ . | quote }}
 {{  end -}}
