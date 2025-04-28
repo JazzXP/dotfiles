@@ -6,6 +6,7 @@ if command -v brew 2>&1 >/dev/null; then
 else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   {{ if eq .chezmoi.os "linux" -}}
+  sudo apt install unzip
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   {{ end -}}
 fi
