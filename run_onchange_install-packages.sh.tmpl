@@ -5,10 +5,10 @@ if [ command -v brew 2>&1 >/dev/null ]; then
   brew upgrade
 else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew tap homebrew/cask
   {{ if eq .chezmoi.os "linux" -}}
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   {{ end -}}
+  brew tap homebrew/cask
 fi
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
