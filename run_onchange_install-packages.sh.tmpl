@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 {{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.arch "amd64") -}}
 if [ command -v brew 2>&1 >/dev/null ]; then
   brew update
