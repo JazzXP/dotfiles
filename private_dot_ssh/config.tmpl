@@ -1,7 +1,9 @@
-{{ if eq .location "home" -}}
-Include ~/.orbstack/ssh/config
+{{ if ne .location "server" -}}
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+{{ end -}}
+{{ if eq .location "home" -}}
+Include ~/.orbstack/ssh/config
 Host midway-station
   Hostname midway-station
   User biqu
