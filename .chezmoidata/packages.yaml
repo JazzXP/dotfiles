@@ -1,6 +1,8 @@
 packages:
   core:
     brew:
+      - "llvm"
+      - "gcc"
       - "git"
       - "lsd"
       - "jq"
@@ -14,6 +16,8 @@ packages:
     cask:
       - "1password-cli"
     apt:
+      - "llvm"
+      - "gcc"
       - "git"
       - "1password-cli"
       - "lsd"
@@ -35,6 +39,7 @@ packages:
       - "slack"
       - "font-fira-code-nerd-font"
       - "font-geist-mono-nerd-font"
+      - "unnaturalscrollwheels"
   home:
     brew:
       - "neovim"
@@ -48,6 +53,7 @@ packages:
       - "font-geist-mono-nerd-font"
       - "wezterm"
       - "obsidian"
+      - "unnaturalscrollwheels"
   server:
     brew:
       - "tmux"
