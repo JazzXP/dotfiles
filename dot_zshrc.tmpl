@@ -1,12 +1,18 @@
 ## Start with path so everything else below works
 export PATH=~/bin:/usr/local/opt/vim/bin:/usr/local/opt/ruby/bin:/usr/local/opt/git/bin/:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 
+{{ if eq .location "client" -}}
+export BREWPATH=~/homebrew
+{{ else -}}
+export BREWPATH=/opt/homebrew
+{{ end -}}
+export PATH=$PATH:$BREWPATH/bin
 ~/bin/run_once_daily.sh
 zle -N menu-search
 zle -N recent-paths
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $BREWPATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $BREWPATH/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $BREWPATH/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -36,10 +42,14 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ## Exports
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 {{ if eq .chezmoi.os "darwin" }}
+{{ if eq .location "client" -}}
+export PATH=$PATH:~/Applications/WezTerm.app/Contents/MacOS
+{{ else -}}
 export PATH=$PATH:/Applications/WezTerm.app/Contents/MacOS
-export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/ruby/lib"
-export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/ruby/include"
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/ruby/lib/pkgconfig"
+{{ end -}}
+export LDFLAGS="$LDFLAGS -L${BREWPATH}/opt/ruby/lib"
+export CPPFLAGS="$CPPFLAGS -I${BREWPATH}/opt/ruby/include"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/ruby/lib/pkgconfig"
 {{ else }}
 export LDFLAGS="$LDFLAGS -L/usr/local/opt/ruby/lib"
 export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/ruby/include"

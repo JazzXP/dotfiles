@@ -1,6 +1,6 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 {{- $name := promptStringOnce . "name" "Your name" -}}
-{{- $choices := list "work" "home" "server" -}}
+{{- $choices := list "work" "client" "home" "server" -}}
 {{- $location := promptChoiceOnce . "location" "Location" $choices -}}
 {{- $opsecret := promptStringOnce . "opsecret" "1Password secret key" -}}
 [git]
