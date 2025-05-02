@@ -16,9 +16,11 @@ Host main.server.sdickinson.com
 {{ if ne .location "server" -}}
 Host github.com
   IdentitiesOnly yes
-{{   if eq .location "work" -}} 
+{{   if eq .location "client" }} 
+  IdentityFile ~/.ssh/id_ed25519_reece.pub
+{{   else if eq .location "work" }} 
   IdentityFile ~/.ssh/id_ed25519_shine.pub
-{{   else -}}
+{{   else }}
   IdentityFile ~/.ssh/id_ed25519_personal.pub
 {{   end -}}
 Host personal.github.com
