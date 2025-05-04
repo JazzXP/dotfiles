@@ -154,7 +154,9 @@ bindkey -a \
     "/"     .vi-history-search-backward \
     "?"     .vi-history-search-forward \
     #
-
+zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
    source <(fzf --zsh)
