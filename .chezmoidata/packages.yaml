@@ -10,6 +10,7 @@ packages:
       - "zsh-autocomplete"
       - "zsh-syntax-highlighting"
       - "zsh-autosuggestions"
+      - "duf"
       - "jandedobbeleer/oh-my-posh/oh-my-posh"
     cask:
       - "1password-cli"
