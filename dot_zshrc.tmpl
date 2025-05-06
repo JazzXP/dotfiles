@@ -1,11 +1,7 @@
 ## Start with path so everything else below works
-export PATH=~/bin:/usr/local/opt/vim/bin:/usr/local/opt/ruby/bin:/usr/local/opt/git/bin/:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
+export PATH=~/bin:~/.local/bin:/usr/local/opt/vim/bin:/usr/local/opt/ruby/bin:/usr/local/opt/git/bin/:/usr/local/opt/gnu-tar/libexec/gnubin:$PATH
 
-{{ if eq .location "client" -}}
-export BREWPATH=~/homebrew
-{{ else -}}
 export BREWPATH=/opt/homebrew
-{{ end -}}
 export PATH=$PATH:$BREWPATH/bin
 export XDG_CACHE_HOME=~/.cache
 ~/bin/run_once_daily.sh
@@ -108,6 +104,8 @@ batdiff() {
 }
 zle -N menu-search
 zle -N recent-paths
+# zstyle -a ':autocomplete::compinit' arguments -u
+zstyle '*:compinit' arguments -D -i -u -C -w
 source $BREWPATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $BREWPATH/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $BREWPATH/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -191,3 +189,7 @@ zstyle '*' single-ignored show
 {{ end }}
 
 source <(wezterm shell-completion --shell zsh)
+
+{{ if eq .location "client" -}}
+source ~/.aws/awslogin.sh
+{{ end -}}
