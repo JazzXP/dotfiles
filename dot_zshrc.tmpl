@@ -34,11 +34,7 @@ export XDG_CACHE_HOME=~/.cache
 ## Exports
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 {{ if eq .chezmoi.os "darwin" }}
-{{ if eq .location "client" -}}
-export PATH=$PATH:~/Applications/WezTerm.app/Contents/MacOS
-{{ else -}}
 export PATH=$PATH:/Applications/WezTerm.app/Contents/MacOS
-{{ end -}}
 export LDFLAGS="$LDFLAGS -L${BREWPATH}/opt/ruby/lib"
 export CPPFLAGS="$CPPFLAGS -I${BREWPATH}/opt/ruby/include"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/ruby/lib/pkgconfig"
