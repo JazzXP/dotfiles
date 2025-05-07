@@ -3,7 +3,7 @@ return {
     "milanglacier/minuet-ai.nvim",
     config = function()
       require("minuet").setup({
-        provider = "openai_fim_compatible",
+        provider = "openai_compatible",
         n_completions = 1, -- recommend for local model for resource saving
         add_single_line_entry = true,
         -- I recommend beginning with a small context window size and incrementally
@@ -13,11 +13,11 @@ return {
         -- you should adjust the context window to a larger value.
         context_window = 512,
         provider_options = {
-          openai_fim_compatible = {
+          openai_compatible = {
             api_key = "TERM",
             name = "Ollama",
-            end_point = "http://localhost:11434/v1/completions",
-            model = "qwen2.5-coder:7b",
+            end_point = "http://localhost:11434/v1/chat/completions",
+            model = "qwen3",
             optional = {
               max_tokens = 56,
               top_p = 0.9,
