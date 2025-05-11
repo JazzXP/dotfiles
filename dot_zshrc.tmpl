@@ -73,7 +73,7 @@ alias la='ls -lAh'
 alias dockerclear='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 alias dockercleardangling='docker rmi $(docker images -q -f dangling=true)'
 alias imgcat="wezterm imgcat"
-alias oo="cd ~/Documents/Obsidian/Personal/"
+alias oo="cd $HOME/Documents/Obsidian/Personal/"
 
 ## Evals
 eval $(thefuck --alias)
