@@ -103,6 +103,7 @@ eval "$(brew shellenv)"
 batdiff() {
     git diff --name-only --relative --diff-filter=d | xargs cat --diff
 }
+setopt interactive_comments
 zle -N menu-search
 zle -N recent-paths
 # zstyle -a ':autocomplete::compinit' arguments -u
