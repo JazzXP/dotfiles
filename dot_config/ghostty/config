@@ -1,6 +1,8 @@
 
 # You can preview the config here
- 
+font-family = "Cascadia Code NF Regular Regular"
+font-size = 13
+font-feature = "+zero"
 quit-after-last-window-closed = true
 clipboard-read = allow
 clipboard-write = allow
