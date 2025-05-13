@@ -5,6 +5,7 @@ packages:
       - "lsd"
       - "jq"
       - "fzf"
+      - "fd"
       - "fastfetch"
       - "zsh"
       - "zsh-autocomplete"
@@ -12,8 +13,17 @@ packages:
       - "zsh-autosuggestions"
       - "duf"
       - "jandedobbeleer/oh-my-posh/oh-my-posh"
+      - "coreutils"
+      - "gawk"
+      - "gh"
+      - "glab"
+      - "gsed"
+      - "pngpaste"
+      - "zoxide"
+      - "tmux"
     cask:
       - "1password-cli"
+
     apt:
       - "llvm"
       - "gcc"
@@ -24,6 +34,7 @@ packages:
       - "fzf"
       - "fastfetch"
       - "zsh"
+      - "tmux"
   work:
     brew:
       - "neovim"
@@ -32,13 +43,18 @@ packages:
       - "chafa"
       - "ripgrep"
       - "tldr"
+      - "borders"
     cask:
       - "wezterm"
       - "obsidian"
       - "slack"
       - "font-fira-code-nerd-font"
       - "font-geist-mono-nerd-font"
+      - "font-cascadia-code-nerd-font"
       - "unnaturalscrollwheels"
+      - "nikitabobko/tap/aerospace"
+      - "ghostty"
+      - "marta"
   home:
     brew:
       - "neovim"
@@ -50,14 +66,18 @@ packages:
     cask:
       - "font-fira-code-nerd-font"
       - "font-geist-mono-nerd-font"
+      - "font-cascadia-code-nerd-font"
       - "wezterm"
       - "obsidian"
       - "unnaturalscrollwheels"
+      - "nikitabobko/tap/aerospace"
+      - "ghostty"
+      - "marta"
   server:
     brew:
-      - "tmux"
+      - "screen"
     apt:
-      - "tmux"
+      - "screen"
   wsl:
     apt:
       - "wslu"
