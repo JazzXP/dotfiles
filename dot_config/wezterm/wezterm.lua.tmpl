@@ -153,7 +153,11 @@ config.set_environment_variables = {
 -- config.color_scheme = 'Spacedust'
 config.color_scheme = 'Tokyo Night Moon'
 config.font = wezterm.font("Cascadia Code NF", { weight = "Regular", stretch = "Normal", style = "Normal" })
+{{ if eq .location "home" -}}
+config.font_size = 12.2
+{{ else }}
 config.font_size = 13
+{{ end -}}
 config.harfbuzz_features = { 'ss19' }
 {{ end }}
 -- config.color_scheme = 'Atelier Dune (base16)'
