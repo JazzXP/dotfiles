@@ -13,7 +13,7 @@ after-startup-command = [
   'exec-and-forget borders active_color=0xffff5733 inactive_color=0xff494d64 width=5.0'
 ]
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true 
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -256,3 +256,8 @@ run = 'move-node-to-workspace T'
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace S'
+
