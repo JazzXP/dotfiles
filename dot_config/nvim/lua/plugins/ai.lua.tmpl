@@ -1,0 +1,11 @@
+return {
+{{ if eq .location "client" -}}
+  { 'zbirenbaum/copilot.lua' },
+  { 'CopilotC-Nvim/CopilotChat.nvim' },
+{{ else -}}
+  'ggml-org/llama.vim',
+  vim.g.llama_config = {
+    show_info = false
+  },
+{{ end }}
+}
