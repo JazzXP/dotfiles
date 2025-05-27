@@ -21,6 +21,8 @@ packages:
       - "pngpaste"
       - "zoxide"
       - "tmux"
+      - "nnn"
+      - "yazi"
     cask:
       - "1password-cli"
 
