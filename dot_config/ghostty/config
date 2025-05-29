@@ -32,3 +32,4 @@ foreground = #c8d3f5
 cursor-color = #c8d3f5
 selection-background = #2d3f76
 selection-foreground = #c8d3f5
+keybind = ctrl+alt+super+shift+b=text:\x02
