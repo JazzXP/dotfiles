@@ -91,7 +91,7 @@ automatically-unhide-macos-hidden-apps = false
     ctrl-alt-shift-cmd-9 = [ 'workspace 9', 'mode main' ]
     # In your config, you can drop workspace bindings that you don't need
     ctrl-alt-shift-cmd-a = [ 'workspace A', 'mode main' ]
-    ctrl-alt-shift-cmd-b = [ 'workspace B', 'mode main' ]
+    # ctrl-alt-shift-cmd-b = [ 'workspace B', 'mode main' ]
     ctrl-alt-shift-cmd-c = [ 'workspace C', 'mode main' ]
     ctrl-alt-shift-cmd-d = [ 'workspace D', 'mode main' ]
     ctrl-alt-shift-cmd-e = [ 'workspace E', 'mode main' ]
