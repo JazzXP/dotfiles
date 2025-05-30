@@ -80,32 +80,30 @@ automatically-unhide-macos-hidden-apps = false
     ctrl-alt-shift-cmd-l = 'focus right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    ctrl-alt-shift-cmd-1 = [ 'workspace 1', 'mode main' ]
-    ctrl-alt-shift-cmd-2 = [ 'workspace 2', 'mode main' ]
-    ctrl-alt-shift-cmd-3 = [ 'workspace 3', 'mode main' ]
-    ctrl-alt-shift-cmd-4 = [ 'workspace 4', 'mode main' ]
+    ctrl-alt-shift-cmd-1 = [ 'workspace 1', 'mode main' ] # Misc
+    ctrl-alt-shift-cmd-2 = [ 'workspace 2', 'mode main' ] # Terminal
+    ctrl-alt-shift-cmd-3 = [ 'workspace 3', 'mode main' ] # Browser
+    ctrl-alt-shift-cmd-4 = [ 'workspace 4', 'mode main' ] # Long term scratch
     ctrl-alt-shift-cmd-5 = [ 'workspace 5', 'mode main' ]
     ctrl-alt-shift-cmd-6 = [ 'workspace 6', 'mode main' ]
     ctrl-alt-shift-cmd-7 = [ 'workspace 7', 'mode main' ]
     ctrl-alt-shift-cmd-8 = [ 'workspace 8', 'mode main' ]
     ctrl-alt-shift-cmd-9 = [ 'workspace 9', 'mode main' ]
-    # In your config, you can drop workspace bindings that you don't need
     ctrl-alt-shift-cmd-a = [ 'workspace A', 'mode main' ]
-    # ctrl-alt-shift-cmd-b = [ 'workspace B', 'mode main' ]
     ctrl-alt-shift-cmd-c = [ 'workspace C', 'mode main' ]
     ctrl-alt-shift-cmd-d = [ 'workspace D', 'mode main' ]
-    ctrl-alt-shift-cmd-e = [ 'workspace E', 'mode main' ]
+    ctrl-alt-shift-cmd-e = [ 'workspace E', 'mode main' ] # Email - Outlook/Thunderbird
     ctrl-alt-shift-cmd-f = [ 'workspace F', 'mode main' ]
     ctrl-alt-shift-cmd-g = [ 'workspace G', 'mode main' ]
     ctrl-alt-shift-cmd-i = [ 'workspace I', 'mode main' ]
     ctrl-alt-shift-cmd-m = [ 'workspace M', 'mode main' ]
     ctrl-alt-shift-cmd-n = [ 'workspace N', 'mode main' ]
-    ctrl-alt-shift-cmd-o = [ 'workspace O', 'mode main' ]
+    ctrl-alt-shift-cmd-o = [ 'workspace O', 'mode main' ] # Obsidian
     ctrl-alt-shift-cmd-p = [ 'workspace P', 'mode main' ]
     ctrl-alt-shift-cmd-q = [ 'workspace Q', 'mode main' ]
     ctrl-alt-shift-cmd-r = [ 'workspace R', 'mode main' ]
-    ctrl-alt-shift-cmd-s = [ 'workspace S', 'mode main' ]
-    ctrl-alt-shift-cmd-t = [ 'workspace T', 'mode main' ]
+    ctrl-alt-shift-cmd-s = [ 'workspace S', 'mode main' ] # Slack
+    ctrl-alt-shift-cmd-t = [ 'workspace T', 'mode main' ] # Teams
     ctrl-alt-shift-cmd-u = [ 'workspace U', 'mode main' ]
     ctrl-alt-shift-cmd-v = [ 'workspace V', 'mode main' ]
     ctrl-alt-shift-cmd-w = [ 'workspace W', 'mode main' ]
@@ -140,6 +138,7 @@ automatically-unhide-macos-hidden-apps = false
     # '''
 [mode.leader.binding]
     ctrl-alt-shift-cmd-space = 'mode main'
+    ctrl-alt-shift-cmd-semicolon = 'mode service'
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
     alt-comma = 'layout accordion horizontal vertical'
@@ -154,40 +153,6 @@ automatically-unhide-macos-hidden-apps = false
     minus = 'resize smart -50'
     equal = 'resize smart +50'
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    1 = [ 'workspace 1', 'mode main' ]
-    2 = [ 'workspace 2', 'mode main' ]
-    3 = [ 'workspace 3', 'mode main' ]
-    4 = [ 'workspace 4', 'mode main' ]
-    5 = [ 'workspace 5', 'mode main' ]
-    6 = [ 'workspace 6', 'mode main' ]
-    7 = [ 'workspace 7', 'mode main' ]
-    8 = [ 'workspace 8', 'mode main' ]
-    9 = [ 'workspace 9', 'mode main' ]
-    # In your config, you can drop workspace bindings that you don't need
-    a = [ 'workspace A', 'mode main' ]
-    b = [ 'workspace B', 'mode main' ]
-    c = [ 'workspace C', 'mode main' ]
-    d = [ 'workspace D', 'mode main' ]
-    e = [ 'workspace E', 'mode main' ]
-    f = [ 'workspace F', 'mode main' ]
-    g = [ 'workspace G', 'mode main' ]
-    i = [ 'workspace I', 'mode main' ]
-    m = [ 'workspace M', 'mode main' ]
-    n = [ 'workspace N', 'mode main' ]
-    o = [ 'workspace O', 'mode main' ]
-    p = [ 'workspace P', 'mode main' ]
-    q = [ 'workspace Q', 'mode main' ]
-    r = [ 'workspace R', 'mode main' ]
-    s = [ 'workspace S', 'mode main' ]
-    t = [ 'workspace T', 'mode main' ]
-    u = [ 'workspace U', 'mode main' ]
-    v = [ 'workspace V', 'mode main' ]
-    w = [ 'workspace W', 'mode main' ]
-    x = [ 'workspace X', 'mode main' ]
-    y = [ 'workspace Y', 'mode main' ]
-    z = [ 'workspace Z', 'mode main' ]
-
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     shift-1 = [ 'move-node-to-workspace 1', 'workspace 1', 'mode main' ]
     shift-2 = [ 'move-node-to-workspace 2', 'workspace 2', 'mode main' ]
@@ -199,7 +164,6 @@ automatically-unhide-macos-hidden-apps = false
     shift-8 = [ 'move-node-to-workspace 8', 'workspace 8', 'mode main' ]
     shift-9 = [ 'move-node-to-workspace 9', 'workspace 9', 'mode main' ]
     shift-a = [ 'move-node-to-workspace A', 'workspace A', 'mode main' ]
-    shift-b = [ 'move-node-to-workspace B', 'workspace B', 'mode main' ]
     shift-c = [ 'move-node-to-workspace C', 'workspace C', 'mode main' ]
     shift-d = [ 'move-node-to-workspace D', 'workspace D', 'mode main' ]
     shift-e = [ 'move-node-to-workspace E', 'workspace E', 'mode main' ]
@@ -227,11 +191,14 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
     alt-f = [ 'fullscreen', 'mode main' ]
+    z = ['fullscreen', 'mode main']
+    f = ['layout floating tiling', 'mode main']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
     ctrl-alt-shift-cmd-semicolon = 'mode main'
+    ctrl-alt-shift-cmd-space = 'mode leader'
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
     f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
@@ -244,6 +211,37 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
+
+    ctrl-alt-shift-cmd-1 = [ 'summon-workspace 1', 'mode main' ]
+    ctrl-alt-shift-cmd-2 = [ 'summon-workspace 2', 'mode main' ]
+    ctrl-alt-shift-cmd-3 = [ 'summon-workspace 3', 'mode main' ]
+    ctrl-alt-shift-cmd-4 = [ 'summon-workspace 4', 'mode main' ]
+    ctrl-alt-shift-cmd-5 = [ 'summon-workspace 5', 'mode main' ]
+    ctrl-alt-shift-cmd-6 = [ 'summon-workspace 6', 'mode main' ]
+    ctrl-alt-shift-cmd-7 = [ 'summon-workspace 7', 'mode main' ]
+    ctrl-alt-shift-cmd-8 = [ 'summon-workspace 8', 'mode main' ]
+    ctrl-alt-shift-cmd-9 = [ 'summon-workspace 9', 'mode main' ]
+    ctrl-alt-shift-cmd-a = [ 'summon-workspace A', 'mode main' ]
+    ctrl-alt-shift-cmd-c = [ 'summon-workspace C', 'mode main' ]
+    ctrl-alt-shift-cmd-d = [ 'summon-workspace D', 'mode main' ]
+    ctrl-alt-shift-cmd-e = [ 'summon-workspace E', 'mode main' ]
+    ctrl-alt-shift-cmd-f = [ 'summon-workspace F', 'mode main' ]
+    ctrl-alt-shift-cmd-g = [ 'summon-workspace G', 'mode main' ]
+    ctrl-alt-shift-cmd-i = [ 'summon-workspace I', 'mode main' ]
+    ctrl-alt-shift-cmd-m = [ 'summon-workspace M', 'mode main' ]
+    ctrl-alt-shift-cmd-n = [ 'summon-workspace N', 'mode main' ]
+    ctrl-alt-shift-cmd-o = [ 'summon-workspace O', 'mode main' ]
+    ctrl-alt-shift-cmd-p = [ 'summon-workspace P', 'mode main' ]
+    ctrl-alt-shift-cmd-q = [ 'summon-workspace Q', 'mode main' ]
+    ctrl-alt-shift-cmd-r = [ 'summon-workspace R', 'mode main' ]
+    ctrl-alt-shift-cmd-s = [ 'summon-workspace S', 'mode main' ]
+    ctrl-alt-shift-cmd-t = [ 'summon-workspace T', 'mode main' ]
+    ctrl-alt-shift-cmd-u = [ 'summon-workspace U', 'mode main' ]
+    ctrl-alt-shift-cmd-v = [ 'summon-workspace V', 'mode main' ]
+    ctrl-alt-shift-cmd-w = [ 'summon-workspace W', 'mode main' ]
+    ctrl-alt-shift-cmd-x = [ 'summon-workspace X', 'mode main' ]
+    ctrl-alt-shift-cmd-y = [ 'summon-workspace Y', 'mode main' ]
+    ctrl-alt-shift-cmd-z = [ 'summon-workspace Z', 'mode main' ]
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
