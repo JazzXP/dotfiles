@@ -1,3 +1,4 @@
+-- TODO: Remove this file when LazyVim updates (current date 2025/06/03)
 local pick_chezmoi = function()
   if LazyVim.pick.picker.name == "telescope" then
     require("telescope").extensions.chezmoi.find_files()
@@ -9,6 +10,7 @@ local pick_chezmoi = function()
       end,
     }
     fzf_lua.files({
+      -- cmd = "chezmoi managed --include=files,symlinks --exclude=externals --path-style=absolute",
       cmd = "chezmoi managed --include=files,symlinks --exclude=externals --path-style=absolute",
       actions = actions,
       hidden = false,
