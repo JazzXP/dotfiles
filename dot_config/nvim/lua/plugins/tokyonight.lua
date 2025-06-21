@@ -2,7 +2,7 @@ return {
   "folke/tokyonight.nvim",
   config = function()
     require("tokyonight").setup({
-      style = "moon",
+      style = "storm",
       transparent = true,
       on_colors = function(colors)
         colors.fg_gutter = "#596276"

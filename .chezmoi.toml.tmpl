@@ -2,6 +2,7 @@
 {{- $name := promptStringOnce . "name" "Your name" -}}
 {{- $choices := list "work" "client" "home" "server" -}}
 {{- $location := promptChoiceOnce . "location" "Location" $choices -}}
+{{- $oplogin := promptStringOnce . "oplogin" "1Password login" -}}
 {{- $opsecret := promptStringOnce . "opsecret" "1Password secret key" -}}
 [git]
   autoCommit = true
@@ -13,4 +14,7 @@
     email = {{ $email | quote }}
     name = {{ $name | quote }}
     location = {{ $location | quote }}
+    oplogin = {{ $oplogin | quote }}
     opsecret = {{ $opsecret | quote }}
+[onepassword]
+    prompt = false

@@ -161,6 +161,7 @@ bindkey -a \
     "?"     .vi-history-search-forward \
     #
 zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+zstyle ':completion:*:*' matcher-list 'm:{[:lower:]-}={[:upper:]_}' '+r:|[.]=**'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' use-cache on
@@ -190,7 +191,7 @@ zstyle '*' single-ignored show
   source <(fzf --zsh)
 {{ end }}
 
-source <(wezterm shell-completion --shell zsh)
+# source <(wezterm shell-completion --shell zsh)
 
 {{ if eq .location "client" -}}
 source ~/.aws/awslogin.sh

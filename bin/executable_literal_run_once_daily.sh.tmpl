@@ -17,5 +17,7 @@ echo "$TODAY" >"$TIMESTAMP_FILE"
 
 # Place the commands you want to run once per day here
 fastfetch
+OPUSERID=$(op account list | grep {{ .oplogin }} | awk '{print $3}')
+eval $(op signin --account $OPUSERID)
 chezmoi update
 
