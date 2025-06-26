@@ -1,0 +1,44 @@
+local codestats = require("codestats")
+local xp = function()
+  return codestats.get_xp(0) .. "/" .. codestats.get_xp() -- current buf language xp
+end
+return {
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      opts.sections.lualine_z = {}
+      opts.sections.lualine_z = {
+{{ if eq .location "client" -}}
+        {
+          "copilot",
+          show_colors = false,
+          show_loading = true,
+          symbols = {
+            status = {
+              hl = {
+                enabled = "#50FA7B",
+                sleep = "#AEB7D0",
+                disabled = "#6272A4",
+                warning = "#FF8501",
+                unknown = "#FF5555"
+              }
+            }
+          }
+        },
+{{ end -}}
+        "filetype",
+        {
+          xp,
+          fmt = function(s)
+            return s and (s ~= "0/0" or nil) and s .. "xp"
+          end,
+        },
+      }
+    end,
+  },
+{{ if eq .location "client" -}}
+  {
+    "AndreM222/copilot-lualine",
+  },
+{{ end -}}
+}
