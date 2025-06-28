@@ -4,6 +4,7 @@
 {{- $location := promptChoiceOnce . "location" "Location" $choices -}}
 {{- $oplogin := promptStringOnce . "oplogin" "1Password login" -}}
 {{- $opsecret := promptStringOnce . "opsecret" "1Password secret key" -}}
+{{- $geminikey := promptStringOnce . "geminikey" "Gemini API Key" -}}
 [git]
   autoCommit = true
   autoPush = true
@@ -16,5 +17,6 @@
     location = {{ $location | quote }}
     oplogin = {{ $oplogin | quote }}
     opsecret = {{ $opsecret | quote }}
+    geminikey = {{ $geminikey | quote }}
 [onepassword]
     prompt = false
