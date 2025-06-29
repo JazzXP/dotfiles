@@ -25,7 +25,7 @@ Linux)
 			sudo apt install -y 1password-cli
 	else
 		ARCH="{{ .chezmoi.arch }}" &&
-			wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.31.1/op_linux_${ARCH}_v2.31.1.zip" -O op.zip &&
+			curl -l -o op.zip "https://cache.agilebits.com/dist/1P/op2/pkg/v2.31.1/op_linux_${ARCH}_v2.31.1.zip" &&
 			unzip -d op op.zip &&
 			sudo mv op/op /usr/local/bin/ &&
 			rm -r op.zip op &&
