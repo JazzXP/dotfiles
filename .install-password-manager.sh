@@ -25,10 +25,10 @@ Linux)
 			sudo apt install -y 1password-cli
 	else
 		BASE_ARCH=$(uname -m)
-		if $BASE_ARCH eq "aarch64"; then
+		if echo "$BASE_ARCH" eq "aarch64"; then
 			ARCH=arm64
 		fi
-		if $BASE_ARCH eq "x86_65"; then
+		if echo "$BASE_ARCH" eq "x86_65"; then
 			ARCH=amd64
 		fi
 		curl -l -o op.zip "https://cache.agilebits.com/dist/1P/op2/pkg/v2.31.1/op_linux_${ARCH}_v2.31.1.zip" &&
