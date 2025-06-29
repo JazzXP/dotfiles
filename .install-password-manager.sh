@@ -9,7 +9,7 @@ Darwin)
 	brew install --cask 1password-cli
 	;;
 Linux)
-	if "$(type apt >/dev/null 2>&1)"; then
+	if type apt >/dev/null 2>&1; then
 		# commands to install 1password-cli-binary on Linux
 		curl -sS https://downloads.1password.com/linux/keys/1password.asc |
 			sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg &&
