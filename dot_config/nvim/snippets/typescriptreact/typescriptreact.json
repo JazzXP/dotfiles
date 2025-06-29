@@ -3,5 +3,25 @@
     "prefix": "aaa",
     "description": "Arrange, Act, Assert",
     "body": ["// ARRANGE\n${1}\n", "// ACT\n${2}\n", "// ASSERT\n${0}"]
+  },
+  "Basic useEffect": {
+    "prefix": "useE",
+    "description": "Basic useEffect",
+    "body": ["useEffect(() => {\n  ${0}\n}, [${1}]);"]
+  },
+  "Basic useMemo": {
+    "prefix": "useM",
+    "description": "Basic useMemo",
+    "body": ["useMemo(() => {\n ${0}\n}, [${1}]);"]
+  },
+  "Basic useCallback": {
+    "prefix": "useC",
+    "description": "Basic useCallback",
+    "body": ["useCallback(() => {\n ${0}\n}, [${1}]);"]
+  },
+  "console log": {
+    "prefix": "log",
+    "description": "console.log(value)",
+    "body": ["console.log(${1:value});", ""]
   }
 }
