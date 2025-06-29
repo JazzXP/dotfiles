@@ -1,12 +1,12 @@
 #!/bin/bash
-{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.arch "amd64") -}}
+{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.osRelease.id "debian") -}}
 if command -v brew 2>&1 >/dev/null; then
   brew update
   brew upgrade
 else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   {{ if eq .chezmoi.os "linux" -}}
-  sudo apt install unzip
+  sudo apt install unzip git
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   {{ end -}}
 fi
