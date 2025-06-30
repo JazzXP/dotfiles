@@ -14,3 +14,4 @@ macos-option-as-alt = true
 theme = tokyonight-storm
 
 keybind = ctrl+alt+super+shift+b=text:\x02
+custom-shader = /Users/sdickinson/.config/ghostty/cursor_blaze.glsl
