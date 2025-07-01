@@ -4,7 +4,9 @@ export PATH=~/bin:~/.local/bin:/usr/local/opt/vim/bin:/usr/local/opt/ruby/bin:/u
 export BREWPATH=/opt/homebrew
 export PATH=$PATH:$BREWPATH/bin
 export XDG_CACHE_HOME=~/.cache
+{{ if eq .location "home" -}}
 export GEMINI_API_KEY={{ .geminikey }}
+{{ end -}}
 ~/bin/run_once_daily.sh
 {{ if eq .location "client" -}}
 export PATH=$HOME/.jenv/bin:$PATH
