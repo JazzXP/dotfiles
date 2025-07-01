@@ -57,6 +57,7 @@ packages:
       - "nikitabobko/tap/aerospace"
       - "ghostty"
       - "marta"
+      - "jordanbaird-ice"
   home:
     brew:
       - "neovim"
@@ -75,6 +76,7 @@ packages:
       - "nikitabobko/tap/aerospace"
       - "ghostty"
       - "marta"
+      - "jordanbaird-ice"
   server:
     brew:
       - "screen"
