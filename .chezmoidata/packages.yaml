@@ -52,7 +52,7 @@ packages:
       - "slack"
       - "font-fira-code-nerd-font"
       - "font-geist-mono-nerd-font"
-      - "font-cascadia-code-nerd-font"
+      - "font-cascadia-code-nf"
       - "unnaturalscrollwheels"
       - "nikitabobko/tap/aerospace"
       - "ghostty"
@@ -69,7 +69,7 @@ packages:
     cask:
       - "font-fira-code-nerd-font"
       - "font-geist-mono-nerd-font"
-      - "font-cascadia-code-nerd-font"
+      - "font-cascadia-code-nf"
       - "wezterm"
       - "obsidian"
       - "unnaturalscrollwheels"

@@ -4,6 +4,10 @@
 {{- $location := promptChoiceOnce . "location" "Location" $choices -}}
 {{- $oplogin := promptStringOnce . "oplogin" "1Password login" -}}
 {{- $opsecret := promptStringOnce . "opsecret" "1Password secret key" -}}
+{{- $geminikey := "" -}}
+{{- if eq $location "home" -}}
+{{- $geminikey := promptStringOnce . "geminikey" "Gemini API Key" -}}
+{{- end -}}
 [git]
   autoCommit = true
   autoPush = true
@@ -16,11 +20,9 @@
     location = {{ $location | quote }}
     oplogin = {{ $oplogin | quote }}
     opsecret = {{ $opsecret | quote }}
-{{- if eq $location "home"}}
-{{- $geminikey := promptStringOnce . "geminikey" "Gemini API Key" -}}
     geminikey = {{ $geminikey | quote }}
-{{- end }}
 [onepassword]
     prompt = false
 [hooks.read-source-state.pre]
     command = ".local/share/chezmoi/.install-password-manager.sh"
+
