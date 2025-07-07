@@ -142,6 +142,11 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+unsetopt menu_complete   # do not autoselect the first completion entry
+unsetopt flowcontrol
+setopt auto_menu         # show completion menu on successive tab press
+setopt complete_in_word
+setopt always_to_end
 #
 # eval "$(starship init zsh)"
 # eval "$(oh-my-posh init zsh)"
@@ -149,6 +154,7 @@ esac
 eval "$(oh-my-posh init zsh --config ~/.config/slim.omp.json)"
 bindkey              '^I' menu-select
 bindkey "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '^o' accept-and-infer-next-history
 bindkey -M menuselect              '^I'         menu-complete
 bindkey -M menuselect "$terminfo[kcbt]" reverse-menu-complete
 bindkey -a \
@@ -163,6 +169,10 @@ bindkey -a \
     "/"     .vi-history-search-backward \
     "?"     .vi-history-search-forward \
     #
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+zstyle ':completion:*' completer _complete _complete:-fuzzy _correct _approximate _ignored _expand
+
 zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
 zstyle ':completion:*:*' matcher-list 'm:{[:lower:]-}={[:upper:]_}' '+r:|[.]=**'
 zstyle ':completion:*' list-colors ''
