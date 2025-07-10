@@ -1,11 +1,16 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-        "os": "#ACB0BE",
-        "closer": "p:os",
+        "overlay1": "#7f849c",
+        "overlay2": "#9399b2",
+        "surface2": "#585b70",
+        "os": "p:surface2",
+        "closer": "p:surface2",
         "pink": "#F5C2E7",
         "lavender": "#B4BEFE",
-        "blue":  "#89B4FA"
+        "blue":  "#89B4FA",
+        "teal": "#94e2d5",
+        "red": "#f38ba8"
   },
   "blocks": [
     {
@@ -60,8 +65,76 @@
         }
       ],
       "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "p:pink",
+          "style": "plain",
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        },
+        {
+          "type": "docker",
+          "style": "plain",
+          "foreground": "p:lavender",
+          "template": "  {{ .Context }} "
+        },
+        {
+          "foreground": "p:blue",
+          "style": "plain",
+          "template": " \ue6a3 {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} ",
+          "type": "aws"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "p:closer",
+          "style": "plain",
+          "template": "~#@",
+          "type": "text"
+        },
+        {
+          "style": "plain",
+          "foreground": "p:closer",
+          "template": "\uf105 ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "p:pink",
+          "properties": {
+            "style": "roundrock",
+            "threshold": 500
+          },
+          "style": "plain",
+          "template": " {{ .FormattedMs }}<#585b70> \uf252 </>",
+          "type": "executiontime"
+        },
+        {
+          "foreground": "p:teal",
+          "foreground_templates": ["{{ if gt .Code 0 }}#f38ba8{{ end }}"],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "{{ if gt .Code 0 }}{{ .Code }}{{ end }} \u25cf ",
+          "type": "status"
+        }
+      ],
+      "type": "rprompt"
     }
   ],
-  "final_space": true,
   "version": 3
 }
