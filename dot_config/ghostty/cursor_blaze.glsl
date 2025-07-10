@@ -60,8 +60,12 @@ vec2 getRectangleCenter(vec4 rectangle) {
     return vec2(rectangle.x + (rectangle.z / 2.), rectangle.y - (rectangle.w / 2.));
 }
 
-const vec4 TRAIL_COLOR = vec4(1.0, 0.725, 0.161, 1.0);
-const vec4 TRAIL_COLOR_ACCENT = vec4(1.0, 0., 0., 1.0);
+// For Catppuccin Mocha
+const vec4 TRAIL_COLOR = vec4(0.8, 0.65, 0.968, 1.0);
+const vec4 TRAIL_COLOR_ACCENT = vec4(0.953, 0.545, 0.659, 1.0);
+
+// const vec4 TRAIL_COLOR = vec4(1.0, 0.725, 0.161, 1.0);
+// const vec4 TRAIL_COLOR_ACCENT = vec4(1.0, 0., 0., 1.0);
 // const vec4 TRAIL_COLOR = vec4(0.482, 0.886, 1.0, 1.0);
 // const vec4 TRAIL_COLOR_ACCENT = vec4(0.0, 0.424, 1.0, 1.0);
 const vec4 CURRENT_CURSOR_COLOR = TRAIL_COLOR;
