@@ -141,7 +141,7 @@ automatically-unhide-macos-hidden-apps = false
     ctrl-alt-shift-cmd-semicolon = 'mode service'
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
-    alt-comma = 'layout accordion horizontal vertical'
+    alt-comma = 'layout horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     alt-shift-h = 'move left'
