@@ -51,7 +51,7 @@ return {
 {{- else -}}
       provider = "ollama",
       -- provider = "gemini",
-{{- end -}}
+{{ end }}
       providers = {
           ollama = {
             endpoint = "http://localhost:11434",
@@ -263,7 +263,7 @@ return {
 {{- if eq .location "client" -}}
         default = { "avante", "copilot" },
 {{- else -}}
-          default = { "avante", "minuet" },
+        default = { "avante", "minuet" },
 {{- end }}
         providers = {
           copilot = {
