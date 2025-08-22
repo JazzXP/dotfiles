@@ -78,7 +78,7 @@ alias dockerclear='docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
 alias dockercleardangling='docker rmi $(docker images -q -f dangling=true)'
 alias imgcat="wezterm imgcat"
 alias oo="cd $HOME/Documents/Obsidian/Personal/"
-
+alias nvim-light='NVIM_APPNAME="nvim-light" nvim'
 ## Evals
 eval $(thefuck --alias)
 
