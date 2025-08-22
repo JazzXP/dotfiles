@@ -19,10 +19,9 @@ packages:
       - "glab"
       - "gsed"
       - "pngpaste"
-      - "zoxide"
       - "tmux"
-      - "nnn"
       - "yazi"
+      - "abduco"
     cask:
       - "1password-cli"
 
