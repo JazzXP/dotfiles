@@ -68,11 +68,13 @@ return {
             return hub and hub:get_active_servers_prompt() or ""
         end,
         -- Using function prevents requiring mcphub before it's loaded
+{{- if ne .location "client" -}}
         custom_tools = function()
             return {
                 require("mcphub.extensions.avante").mcp_tool(),
             }
         end,
+{{ end }}
       }
     },
     dependencies = {
@@ -354,6 +356,20 @@ return {
     },
     build = "npm install -g mcp-hub@latest",  -- Installs `mcp-hub` node binary globally
     config = function()
+
+{{- if eq .location "client" -}}
+{{- else -}}
+      require("mcphub").setup({
+        extensions = {
+          copilotchat = {
+              enabled = true,
+              convert_tools_to_functions = true,     -- Convert MCP tools to CopilotChat functions
+              convert_resources_to_functions = true, -- Convert MCP resources to CopilotChat functions  
+              add_mcp_prefix = false,                -- Add "mcp_" prefix to function names
+          }
+        }
+      })
+{{- end -}}
         require("mcphub").setup({
         extensions = {
             avante = {

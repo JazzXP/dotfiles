@@ -316,7 +316,7 @@ require('lazy').setup(
     { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
     {
-      'echasnovski/mini.nvim',
+      'nvim-mini/mini.nvim',
       config = function()
         -- Better Around/Inside textobjects
         --
@@ -353,7 +353,7 @@ require('lazy').setup(
       end,
     },
     {
-      'echasnovski/mini.surround',
+      'nvim-mini/mini.surround',
       opts = {
         mappings = {
           add = 'gsa', -- Add surrounding in Normal and Visual modes
