@@ -121,6 +121,8 @@ vim.keymap.set('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to Other Buff
 vim.keymap.set('n', '<leader>`', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 vim.keymap.set('n', '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer and Window' })
 vim.keymap.set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+
+vim.keymap.set('n', '<leader>l', ':Lazy<cr>', { desc = 'Lazy' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -314,7 +316,6 @@ require('lazy').setup(
       },
     },
     { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
     {
       'nvim-mini/mini.nvim',
       config = function()
@@ -332,6 +333,7 @@ require('lazy').setup(
         -- - sd'   - [S]urround [D]elete [']quotes
         -- - sr)'  - [S]urround [R]eplace [)] [']
         require('mini.surround').setup()
+        require('mini.move').setup()
 
         -- Simple and easy statusline.
         --  You could remove this setup call if you don't like it,
@@ -380,6 +382,18 @@ require('lazy').setup(
           additional_vim_regex_highlighting = { 'ruby' },
         },
         indent = { enable = true, disable = { 'ruby' } },
+      },
+    },
+    {
+      "folke/persistence.nvim",
+      event = "BufReadPre",
+      opts = {},
+      -- stylua: ignore
+      keys = {
+        { "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },
+        { "<leader>qS", function() require("persistence").select() end,desc = "Select Session" },
+        { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
+        { "<leader>qd", function() require("persistence").stop() end, desc = "Don't Save Current Session" },
       },
     },
     {
@@ -440,7 +454,42 @@ require('lazy').setup(
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
         bigfile = { enabled = true },
-        dashboard = { enabled = true },
+        dashboard = { 
+          preset = {
+            pick = function(cmd, opts)
+              return LazyVim.pick(cmd, opts)()
+            end,
+            header = [[
+                                        ___                __      __      
+                __                     /\_ \    __        /\ \    /\ \__   
+  ___   __  __ /\_\    ___ ___         \//\ \  /\_\     __\ \ \___\ \ ,_\  
+/' _ `\/\ \/\ \\/\ \ /' __` __`\  _______\ \ \ \/\ \  /'_ `\ \  _ `\ \ \/  
+/\ \/\ \ \ \_/ |\ \ \/\ \/\ \/\ \/\______\\_\ \_\ \ \/\ \L\ \ \ \ \ \ \ \_ 
+\ \_\ \_\ \___/  \ \_\ \_\ \_\ \_\/______//\____\\ \_\ \____ \ \_\ \_\ \__\
+ \/_/\/_/\/__/    \/_/\/_/\/_/\/_/        \/____/ \/_/\/___L\ \/_/\/_/\/__/
+                                                        /\____/            
+                                                        \_/__/             
+ ]],
+            sections = {
+              { section = "header" },
+              { section = "keys", gap = 1 },
+              { title = "Recent Files", section = "recent_files", indent = 2, padding = { 2, 2 } },
+              { section = "startup" },
+            },
+            -- stylua: ignore
+            ---@type snacks.dashboard.Item[]
+            keys = {
+              { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+              { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+              { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+              { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+              { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+              { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+              { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+              { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+            },
+          },
+        },
         explorer = { enabled = true },
         indent = { enabled = true },
         input = { enabled = true },
