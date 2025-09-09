@@ -211,5 +211,9 @@ zstyle '*' single-ignored show
 
 {{ if eq .location "client" -}}
 source ~/.aws/awslogin.sh
+function gh-java-login() {
+  export GITHUB_TOKEN=$(gh auth token)
+  export GITHUB_ACTOR="{{.githubuser}}"
+}  
 {{ end -}}
 eval "$(zoxide init zsh)"
