@@ -4,6 +4,7 @@
 {{- $location := promptChoiceOnce . "location" "Location" $choices -}}
 {{- $oplogin := promptStringOnce . "oplogin" "1Password login" -}}
 {{- $opsecret := promptStringOnce . "opsecret" "1Password secret key" -}}
+{{- $githubuser := promptStringOnce . "githubuser" "GitHub username" -}}
 {{- $geminikey := "" -}}
 {{- if eq $location "home" -}}
 {{- $geminikey := promptStringOnce . "geminikey" "Gemini API Key" -}}
@@ -21,6 +22,7 @@
     oplogin = {{ $oplogin | quote }}
     opsecret = {{ $opsecret | quote }}
     geminikey = {{ $geminikey | quote }}
+    githubuser = {{ $githubuser | quote }}
 [onepassword]
     prompt = false
 [hooks.read-source-state.pre]
