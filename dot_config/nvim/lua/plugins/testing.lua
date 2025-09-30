@@ -2,7 +2,7 @@ return {
   "nvim-neotest/neotest",
   dependencies = {
     "marilari88/neotest-vitest",
-    "nvim-neotest/nvim-nio",
+    -- "nvim-neotest/nvim-nio",
   },
   opts = {
     adapters = {
