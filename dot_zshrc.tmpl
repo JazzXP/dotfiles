@@ -52,7 +52,7 @@ export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/ruby/lib/pkgconfig"
 {{ end }}
 export TERM=xterm-256color
-export BAT_THEME="Catppuccin Mocha"
+export BAT_THEME="gruvbox-dark"
 
 if command -v bat 2>&1 >/dev/null; then
   alias cat="bat"
@@ -154,7 +154,8 @@ setopt always_to_end
 # eval "$(starship init zsh)"
 # eval "$(oh-my-posh init zsh)"
 # eval "$(oh-my-posh init zsh --config ~/.config/multiverse-neon.omp.json)"
-eval "$(oh-my-posh init zsh --config ~/.config/catppuccin_mocha.omp.json)"
+# eval "$(oh-my-posh init zsh --config ~/.config/catppuccin_mocha.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-gruvbox.omp.json)"
 bindkey              '^I' menu-select
 bindkey "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '^o' accept-and-infer-next-history
