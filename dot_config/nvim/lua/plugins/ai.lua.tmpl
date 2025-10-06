@@ -31,7 +31,7 @@ local source_icons = {
 }
 return {
 
-{{- if ne .location "client" -}}
+{{if ne .location "client" -}}
   {
     "yetone/avante.nvim",
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
@@ -68,7 +68,7 @@ return {
             return hub and hub:get_active_servers_prompt() or ""
         end,
         -- Using function prevents requiring mcphub before it's loaded
-{{- if ne .location "client" -}}
+{{ if ne .location "client" -}}
         custom_tools = function()
             return {
                 require("mcphub.extensions.avante").mcp_tool(),
@@ -81,7 +81,7 @@ return {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
-      "echasnovski/mini.pick", -- for file_selector provider mini.pick
+      "nvim-mini/mini.pick", -- for file_selector provider mini.pick
       "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
       "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
       "ibhagwan/fzf-lua", -- for file_selector provider fzf
@@ -98,8 +98,8 @@ return {
       },
     },
   },
-{{- end -}}
-{{- if eq .location "client" -}}
+{{ end -}}
+{{ if eq .location "client" -}}
   {
       "CopilotC-Nvim/CopilotChat.nvim",
       opts = function()
@@ -201,7 +201,7 @@ return {
   {
     "giuxtaposition/blink-cmp-copilot",
   },
-{{- else -}}
+{{ else -}}
   {
     "milanglacier/minuet-ai.nvim",
     config = function()
