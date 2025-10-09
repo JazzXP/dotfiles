@@ -13,30 +13,6 @@ export GEMINI_API_KEY={{ .geminikey }}
 export PATH=$HOME/.jenv/bin:$PATH
 eval "$(jenv init -)"
 {{ end -}}
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
-# Path to your oh-my-zsh installation.
-# export ZSH=~/.oh-my-zsh
-
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-# plugins=(
-#   git
-#   docker
-#   #docker-compose
-#   #aws
-#   #brew
-#   #npm
-#   #yarn
-#   zsh-autosuggestions
-#   zsh-syntax-highlighting
-# )
-
-# source $ZSH/oh-my-zsh.sh
 . "$HOME/.cargo/env"
 # User configuration
 ## Exports
@@ -110,9 +86,7 @@ batdiff() {
 setopt interactive_comments
 zle -N menu-search
 zle -N recent-paths
-# zstyle -a ':autocomplete::compinit' arguments -u
 zstyle '*:compinit' arguments -D -i -u -C -w
-# source ~/.config/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
 source ~/.config/zsh/gruvbox-zsh-syntax-highlighting.zsh
 source ~/.config/zsh/gruvbox-fzf.sh
 source $BREWPATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -135,8 +109,6 @@ unset __conda_setup
 # <<< conda initialize <<<
 {{ end -}}
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 {{ if eq .chezmoi.os "darwin" -}}
 export PNPM_HOME="/Users/sdickinson/Library/pnpm"
 {{ else if eq .chezmoi.os "linux" -}}
@@ -151,11 +123,7 @@ unsetopt flowcontrol
 setopt auto_menu         # show completion menu on successive tab press
 setopt complete_in_word
 setopt always_to_end
-#
-# eval "$(starship init zsh)"
-# eval "$(oh-my-posh init zsh)"
-# eval "$(oh-my-posh init zsh --config ~/.config/multiverse-neon.omp.json)"
-# eval "$(oh-my-posh init zsh --config ~/.config/catppuccin_mocha.omp.json)"
+
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-gruvbox.omp.json)"
 bindkey              '^I' menu-select
 bindkey "$terminfo[kcbt]" menu-select
