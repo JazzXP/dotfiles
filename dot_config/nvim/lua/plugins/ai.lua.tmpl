@@ -68,7 +68,7 @@ return {
             return hub and hub:get_active_servers_prompt() or ""
         end,
         -- Using function prevents requiring mcphub before it's loaded
-{{ if ne .location "client" -}}
+{{ if ne .location "client" }}
         custom_tools = function()
             return {
                 require("mcphub.extensions.avante").mcp_tool(),
