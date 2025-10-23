@@ -9,6 +9,9 @@
 {{- if eq $location "home" -}}
 {{- $geminikey := promptStringOnce . "geminikey" "Gemini API Key" -}}
 {{- end -}}
+{{ if eq $location "work" }}
+tempDir = ".local/tmp"
+{{ end }}
 [git]
   autoCommit = true
   autoPush = true
