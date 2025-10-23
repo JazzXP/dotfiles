@@ -21,10 +21,8 @@ packages:
       - "pngpaste"
       - "tmux"
       - "yazi"
-      - "abduco"
     cask:
       - "1password-cli"
-
     apt:
       - "llvm"
       - "gcc"
@@ -52,10 +50,10 @@ packages:
       - "font-fira-code-nerd-font"
       - "font-geist-mono-nerd-font"
       - "font-cascadia-code-nf"
+      - "font-victor-mono-nerd-font"
       - "unnaturalscrollwheels"
       - "nikitabobko/tap/aerospace"
       - "ghostty"
-      - "marta"
       - "jordanbaird-ice"
   home:
     brew:
@@ -69,12 +67,12 @@ packages:
       - "font-fira-code-nerd-font"
       - "font-geist-mono-nerd-font"
       - "font-cascadia-code-nf"
+      - "font-victor-mono-nerd-font"
       - "wezterm"
       - "obsidian"
       - "unnaturalscrollwheels"
       - "nikitabobko/tap/aerospace"
       - "ghostty"
-      - "marta"
       - "jordanbaird-ice"
   server:
     brew:
