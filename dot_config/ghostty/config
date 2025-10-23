@@ -1,6 +1,7 @@
 
 # You can preview the config here
-font-family = "Cascadia Code NF Regular Regular"
+# font-family = "Cascadia Code NF Regular Regular"
+font-family = VictorMono Nerd Font Mono
 font-size = 13
 font-feature = "+zero"
 quit-after-last-window-closed = true
