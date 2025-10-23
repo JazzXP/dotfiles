@@ -209,3 +209,6 @@ run = 'move-node-to-workspace O'
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace S'
 
+[[on-window-detected]]
+if.app-id = 'org.ferdium.ferdium-app'
+run = 'move-node-to-workspace S'
