@@ -192,6 +192,7 @@ automatically-unhide-macos-hidden-apps = false
     shift-s = [ 'summon-workspace S', 'mode main' ]
     shift-t = [ 'summon-workspace T', 'mode main' ]
 
+
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
 run = 'move-node-to-workspace E'
