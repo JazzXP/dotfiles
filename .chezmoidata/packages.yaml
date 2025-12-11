@@ -21,6 +21,7 @@ packages:
       - "pngpaste"
       - "tmux"
       - "yazi"
+      - "nodejs"
     cask:
       - "1password-cli"
     apt:
@@ -34,6 +35,10 @@ packages:
       - "fastfetch"
       - "zsh"
       - "tmux"
+      - "nodejs"
+    npm:
+      - "pnpm"
+      - "bun"
   work:
     brew:
       - "neovim"
@@ -55,6 +60,7 @@ packages:
       - "nikitabobko/tap/aerospace"
       - "ghostty"
       - "jordanbaird-ice"
+    npm:
   home:
     brew:
       - "neovim"
@@ -74,11 +80,14 @@ packages:
       - "nikitabobko/tap/aerospace"
       - "ghostty"
       - "jordanbaird-ice"
+    npm:
   server:
     brew:
       - "screen"
     apt:
       - "screen"
+    npm:
   wsl:
     apt:
       - "wslu"
+    npm:
