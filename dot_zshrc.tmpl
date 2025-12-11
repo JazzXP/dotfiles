@@ -199,5 +199,16 @@ function gh-java-login() {
   export GITHUB_TOKEN=$(gh auth token)
   export GITHUB_ACTOR="{{.githubuser}}"
 }  
+azure-artifact-login () {
+  if [[ "$(\grep -s 'machine pkgs.dev.azure.com' ~/.netrc)" == "" ]] ; then
+    echo -e "\nmachine pkgs.dev.azure.com login api password to-be-replaced" >> ~/.netrc
+  fi
+  az account get-access-token \
+    --resource 499b84ac-1321-427f-aa17-267ca6975798 \
+    --query accessToken \
+    --output tsv \
+  | xargs -S4096 -I {} \
+    sed -i '' 's/\(machine pkgs.dev.azure.com login api password \).*/\1{}/g' ~/.netrc
+}
 {{ end -}}
 eval "$(zoxide init zsh)"
