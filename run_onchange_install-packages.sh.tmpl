@@ -23,6 +23,15 @@ brew {{ . | quote }}
 {{  range .packages.core.cask -}}
 cask {{ . | quote }}
 {{  end -}}
+{{ if and (eq .chezmoi.os "linux") -}}
+{{   if eq .chezmoi.osRelease.id "debian" }}
+{{     range .packages.core.deb }}
+DOWNLOAD=$(curl -s https://api.github.com/repos/{{ .ghrepo }}/releases/latest | grep browser_download_url | grep {{ .filename }} | grep {{ $.chezmoi.arch }} | cut -d '"' -f 4)
+curl -L $DOWNLOAD -o {{ $.chezmoi.config.tempDir }}out.deb
+pkg install {{ $.chezmoi.config.tempDir }}out.deb
+{{     end -}}
+{{   end -}}
+{{ end -}}
 {{  if (eq .location "home") -}}
 {{    range .packages.home.brew -}}
 brew {{ . | quote }}
