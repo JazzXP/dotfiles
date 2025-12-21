@@ -16,7 +16,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "folder_separator_template": "<p:tallow>\udb83\udfdf</>",
             "style": "full"
@@ -27,7 +27,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "branch_icon": "",
             "cache_duration": "none",
             "fetch_stash_count": false,
@@ -51,7 +51,7 @@
       "alignment": "right",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "leading_diamond": "\ue0b6",
@@ -63,7 +63,7 @@
           "style": "diamond"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": " {{ if .Root }}<p:chocolate>\uedce</> {{ end }}{{ if not .Root }}<p:chocolate>\uedc5</> {{ end }}",
@@ -72,7 +72,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "branch_icon": "",
             "cache_duration": "none",
             "fetch_stash_count": false,
@@ -86,7 +86,7 @@
           "style": "plain"
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "{{ .UserName }} ",
@@ -95,28 +95,28 @@
           "style": "plain"
         },
         {
-          "foreground": "p:corvette",
-          "style": "plain",
           "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
-          "type": "node"
+          "foreground": "p:corvette",
+          "type": "node",
+          "style": "plain"
         },
         {
-          "type": "rust",
-          "style": "plain",
+          "template": " \ue7a8 {{ .Full }} ",
           "foreground": "p:sandal",
-          "template": "  {{ .Full }} "
+          "type": "rust",
+          "style": "plain"
         },
         {
-          "type": "docker",
-          "style": "plain",
+          "template": " \uf308 {{ .Context }} ",
           "foreground": "p:beeswax",
-          "template": "  {{ .Context }} "
+          "type": "docker",
+          "style": "plain"
         },
         {
-          "foreground": "p:chocolate",
-          "style": "plain",
           "template": " \ue6a3 {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} ",
-          "type": "aws"
+          "foreground": "p:chocolate",
+          "type": "aws",
+          "style": "plain"
         }
       ]
     },
@@ -125,7 +125,7 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\uf4df",
@@ -137,6 +137,6 @@
       "newline": true
     }
   ],
-  "version": 3,
+  "version": 4,
   "final_space": true
 }
