@@ -10,7 +10,7 @@ return {
           base_url = 'https://codestats.net',  -- codestats.net base url
         {{ if eq .chezmoi.os "linux" -}}
           {{ if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
-            api_key = "{{ range (onepassword "dr3bexab4wvloeqcpwrsoubi7e").fields -}}
+            api_key = "{{ range (onepassword "okiqdifurbx3vw2nj4a46em27a" "sseeqxtmmzlfmfmr5lpbgkmvxa").fields -}}
             {{   if eq .label "SERV"  -}}
             {{     .value -}}
             {{   end -}}
@@ -18,13 +18,13 @@ return {
           {{ end -}}
         {{ else if eq .chezmoi.os "darwin" -}}
           {{ if eq .location "work" -}}
-            api_key = "{{ range (onepassword "dr3bexab4wvloeqcpwrsoubi7e").fields -}}
+            api_key = "{{ range (onepassword "okiqdifurbx3vw2nj4a46em27a" "sseeqxtmmzlfmfmr5lpbgkmvxa").fields -}}
             {{   if eq .label "Shine"  -}}
             {{     .value -}}
             {{   end -}}
             {{ end }}",
           {{ else -}}
-            api_key = "{{ range (onepassword "dr3bexab4wvloeqcpwrsoubi7e").fields -}}
+            api_key = "{{ range (onepassword "okiqdifurbx3vw2nj4a46em27a" "sseeqxtmmzlfmfmr5lpbgkmvxa").fields -}}
             {{   if eq .label "Macbook Pro"  -}}
             {{     .value -}}
             {{   end -}}

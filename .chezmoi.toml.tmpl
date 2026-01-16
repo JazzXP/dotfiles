@@ -30,6 +30,7 @@ tempDir = ".local/tmp"
     githubuser = {{ $githubuser | quote }}
 [onepassword]
     prompt = false
+    mode = "service"
 [hooks.read-source-state.pre]
     command = ".local/share/chezmoi/.install-password-manager.sh"
 
