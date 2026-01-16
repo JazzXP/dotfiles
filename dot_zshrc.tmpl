@@ -210,5 +210,6 @@ azure-artifact-login () {
   | xargs -S4096 -I {} \
     sed -i '' 's/\(machine pkgs.dev.azure.com login api password \).*/\1{}/g' ~/.netrc
 }
+
 {{ end -}}
 eval "$(zoxide init zsh)"

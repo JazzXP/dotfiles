@@ -4,12 +4,13 @@
 {{- $location := promptChoiceOnce . "location" "Location" $choices -}}
 {{- $oplogin := promptStringOnce . "oplogin" "1Password login" -}}
 {{- $opsecret := promptStringOnce . "opsecret" "1Password secret key" -}}
+{{- $opserviceaccount := promptStringOnce . "opserviceaccount" "1Password service account token" -}}
 {{- $githubuser := promptStringOnce . "githubuser" "GitHub username" -}}
 {{- $geminikey := "" -}}
 {{- if eq $location "home" -}}
 {{- $geminikey := promptStringOnce . "geminikey" "Gemini API Key" -}}
 {{- end -}}
-{{ if eq $location "work" }}
+{{ if ne $location "home" }}
 tempDir = ".local/tmp"
 {{ end }}
 [git]
@@ -24,6 +25,7 @@ tempDir = ".local/tmp"
     location = {{ $location | quote }}
     oplogin = {{ $oplogin | quote }}
     opsecret = {{ $opsecret | quote }}
+    opserviceaccount = {{ $opserviceaccount | quote }}
     geminikey = {{ $geminikey | quote }}
     githubuser = {{ $githubuser | quote }}
 [onepassword]

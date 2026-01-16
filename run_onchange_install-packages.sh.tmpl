@@ -59,7 +59,7 @@ EOF
     sudo apt update &&
     sudo apt install -y {{ join " " .packages.core.apt }} {{ join " " .packages.server.apt }}
 {{ end -}}
-eval $(op account add --address my.1password.com --email {{ .oplogin }} --secret-key {{ .opsecret }} --signin)
+# eval $(op account add --address my.1password.com --email {{ .oplogin }} --secret-key {{ .opsecret }} --signin)
 
 {{ if and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
     sudo add-apt-repository ppa:wslutilities/wslu
@@ -67,7 +67,7 @@ eval $(op account add --address my.1password.com --email {{ .oplogin }} --secret
 {{ end -}}
 {{ if ne .location "server" -}}
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  op read "op://Private/Sdickinson Server Private Key/public key" >~/.ssh/id_ed25519_personal.pub
-  op read "op://Private/Shine Github Key/public key" >~/.ssh/id_ed25519_shine.pub
-  op read "op://Private/Reece Github Key/public key" >~/.ssh/id_ed25519_reece.pub
+  op read "op://general-service-account/Sdickinson Server Private Key/public key" >~/.ssh/id_ed25519_personal.pub
+  op read "op://general-service-account/Shine Github Key/public key" >~/.ssh/id_ed25519_shine.pub
+  op read "op://general-service-account/Reece Github Key/public key" >~/.ssh/id_ed25519_reece.pub
 {{ end -}}
