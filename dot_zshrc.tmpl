@@ -19,7 +19,7 @@ eval "$(jenv init -)"
 ## Exports
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 {{ if eq .chezmoi.os "darwin" }}
-export PATH=$PATH:/Applications/WezTerm.app/Contents/MacOS
+export PATH=$PATH:/Applications/WezTerm.app/Contents/MacOS:/opt/homebrew/opt/coreutils/libexec/gnubin
 export LDFLAGS="$LDFLAGS -L${BREWPATH}/opt/ruby/lib"
 export CPPFLAGS="$CPPFLAGS -I${BREWPATH}/opt/ruby/include"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/ruby/lib/pkgconfig"

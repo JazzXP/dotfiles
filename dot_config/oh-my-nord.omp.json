@@ -1,0 +1,146 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "beeswax": "#ebdbb2",
+    "chocolate": "#de8019",
+    "corvette": "#e5c07b",
+    "earls-green": "#b8ab26",
+    "fire-engine-red": "#cc241d",
+    "sandal": "#a79066",
+    "sandstone": "#7c6f64",
+    "tallow": "#ab9b72",
+    "nord-0 ": "#2E3440",
+    "nord-1 ": "#3B4252",
+    "nord-2 ": "#434C5E",
+    "nord-3 ": "#4C566A"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "options": {
+            "cache_duration": "none",
+            "folder_separator_template": "<p:nord-2>\udb83\udfdf</>",
+            "style": "full"
+          },
+          "template": "<p:nord-2>\ue5ff</> {{ .Path }} ",
+          "foreground": "p:nord-3",
+          "type": "path",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "branch_icon": "",
+            "cache_duration": "none",
+            "fetch_stash_count": false,
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "fetch_worktree_count": false
+          },
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "<b>{{ .HEAD }}</b>",
+          "foreground": "p:nord-3",
+          "background": "p:nord-0",
+          "type": "git",
+          "style": "diamond"
+        }
+      ],
+      "newline": true
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "options": {
+            "cache_duration": "none"
+          },
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "template": "\uea87 {{ reason .Code }}",
+          "foreground": "white",
+          "background": "p:fire-engine-red",
+          "type": "status",
+          "style": "diamond"
+        },
+        {
+          "options": {
+            "cache_duration": "none"
+          },
+          "template": " {{ if .Root }}<p:nord-2>\uedce</> {{ end }}{{ if not .Root }}<p:nord-2>\uedc5</> {{ end }}",
+          "foreground": "p:nord-2",
+          "type": "session",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "branch_icon": "",
+            "cache_duration": "none",
+            "fetch_stash_count": false,
+            "fetch_status": true,
+            "fetch_upstream_icon": false,
+            "fetch_worktree_count": false
+          },
+          "template": "{{ if .Working.Changed }}<p:nord-2>\uf427</>{{ end }} ",
+          "foreground": "p:nord-2",
+          "type": "git",
+          "style": "plain"
+        },
+        {
+          "options": {
+            "cache_duration": "none"
+          },
+          "template": "{{ .UserName }} ",
+          "foreground": "p:nord-2",
+          "type": "session",
+          "style": "plain"
+        },
+        {
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "foreground": "p:nord-2",
+          "type": "node",
+          "style": "plain"
+        },
+        {
+          "template": " \ue7a8 {{ .Full }} ",
+          "foreground": "p:nord-2",
+          "type": "rust",
+          "style": "plain"
+        },
+        {
+          "template": " \uf308 {{ .Context }} ",
+          "foreground": "p:nord-2",
+          "type": "docker",
+          "style": "plain"
+        },
+        {
+          "template": " \ue6a3 {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} ",
+          "foreground": "p:nord-2",
+          "type": "aws",
+          "style": "plain"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "options": {
+            "cache_duration": "none"
+          },
+          "template": "\uf4df",
+          "foreground": "p:nord-1",
+          "type": "text",
+          "style": "plain"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "version": 4,
+  "final_space": true
+}
