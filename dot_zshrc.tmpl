@@ -29,7 +29,7 @@ export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/ruby/lib/pkgconfig"
 {{ end }}
 export TERM=xterm-256color
-export BAT_THEME="gruvbox-dark"
+export BAT_THEME="Nord"
 
 if command -v bat 2>&1 >/dev/null; then
   alias cat="bat"
@@ -102,8 +102,8 @@ setopt interactive_comments
 zle -N menu-search
 zle -N recent-paths
 zstyle '*:compinit' arguments -D -i -u -C -w
-source ~/.config/zsh/gruvbox-zsh-syntax-highlighting.zsh
-source ~/.config/zsh/gruvbox-fzf.sh
+# source ~/.config/zsh/gruvbox-zsh-syntax-highlighting.zsh
+source ~/.config/zsh/nord-fzf.sh
 source $BREWPATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $BREWPATH/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $BREWPATH/share/zsh-autosuggestions/zsh-autosuggestions.zsh

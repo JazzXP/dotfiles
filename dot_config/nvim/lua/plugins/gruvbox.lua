@@ -1,14 +1,20 @@
 return {
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   opts = {
+  --     contrast = "soft",
+  --   },
+  -- },
   {
-    "ellisonleao/gruvbox.nvim",
-    opts = {
-      contrast = "soft",
-    },
+    "shaunsingh/nord.nvim",
+    -- opts = {
+    --   nord_contrast = true,
+    -- },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "nord",
     },
   },
 }

@@ -6,6 +6,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
+      opts.theme = "nord"
       opts.sections.lualine_z = {}
       opts.sections.lualine_z = {
 {{ if eq .location "client" -}}
