@@ -1,18 +1,11 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-    "beeswax": "#ebdbb2",
-    "chocolate": "#de8019",
-    "corvette": "#e5c07b",
-    "earls-green": "#b8ab26",
     "fire-engine-red": "#cc241d",
-    "sandal": "#a79066",
-    "sandstone": "#7c6f64",
-    "tallow": "#ab9b72",
-    "nord-0 ": "#2E3440",
-    "nord-1 ": "#3B4252",
-    "nord-2 ": "#434C5E",
-    "nord-3 ": "#4C566A"
+    "nord-0": "#2E3440",
+    "nord-1": "#3B4252",
+    "nord-2": "#434C5E",
+    "nord-3": "#4C566A"
   },
   "blocks": [
     {
@@ -25,7 +18,7 @@
             "folder_separator_template": "<p:nord-2>\udb83\udfdf</>",
             "style": "full"
           },
-          "template": "<p:nord-2>\ue5ff</> {{ .Path }} ",
+          "template": "<p:nord-3>\ue5ff</> {{ .Path }} ",
           "foreground": "p:nord-3",
           "type": "path",
           "style": "plain"
@@ -133,7 +126,7 @@
             "cache_duration": "none"
           },
           "template": "\uf4df",
-          "foreground": "p:nord-1",
+          "foreground": "p:nord-2",
           "type": "text",
           "style": "plain"
         }

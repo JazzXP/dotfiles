@@ -5,8 +5,8 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#3f3f3f",
-          "foreground": "#26C6DA",
+          "background": "#2E3440",
+          "foreground": "#4C566A",
           "leading_diamond": "\ue0c7\u2593",
           "properties": {
             "alpine": "\uf300",
@@ -30,21 +30,21 @@
           "type": "os"
         },
         {
-          "background": "#3f3f3f",
+          "background": "#2E3440",
           "foreground": "#fafafa",
           "style": "diamond",
-          "template": " {{ if ne .Env.POSH_SESSION_DEFAULT_USER .UserName }}<#77f5d6>{{ .UserName }}</><#7a7a7a>\uf1fa</>{{ end }}<#2EEFBF>{{ .HostName }}</><#7a7a7a> \ue0b1</>",
+          "template": " {{ if ne .Env.POSH_SESSION_DEFAULT_USER .UserName }}<#8FBCBB>{{ .UserName }}</><#7a7a7a>\uf1fa</>{{ end }}<#8FBCBB>{{ .HostName }}</><#7a7a7a> \ue0b1</>",
           "type": "session"
         },
         {
-          "background": "#3f3f3f",
+          "background": "#2E3440",
           "foreground": "#ffff66",
           "style": "diamond",
           "template": " \uf0e7<#7a7a7a> \ue0b1</>",
           "type": "root"
         },
         {
-          "background": "#3f3f3f",
+          "background": "#2E3440",
           "foreground": "#fafafa",
           "properties": {
             "folder_icon": "<#B5B2C2>\ue5fe </>",
@@ -57,7 +57,7 @@
           "type": "path"
         },
         {
-          "background": "#3f3f3f",
+          "background": "#2E3440",
           "foreground": "#ffeb3b",
           "foreground_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb3b{{ end }}",
@@ -74,7 +74,7 @@
           "type": "git"
         },
         {
-          "background": "#3f3f3f",
+          "background": "#2E3440",
           "foreground": "#fafafa",
           "style": "diamond",
           "trailing_diamond": "\ue0b0",
@@ -88,21 +88,21 @@
       "alignment": "right",
       "segments": [
         {
-          "background": "#3f3f3f",
+          "background": "#2E3440",
           "foreground": "#fafafa",
           "leading_diamond": "\ue0b2",
           "style": "diamond",
           "type": "text"
         },
         {
-          "background": "#3f3f3f",
+          "background": "#2E3440",
           "foreground": "#6CA35E",
           "style": "diamond",
           "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}<#7a7a7a> \ue0b3</>",
           "type": "node"
         },
         {
-          "background": "#3f3f3f",
+          "background": "#2E3440",
           "foreground": "#3891A6",
           "style": "diamond",
           "template": " \ue77f {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }}<#7a7a7a> \ue0b3</>",
@@ -111,12 +111,12 @@
         {
           "type": "docker",
           "style": "diamond",
-          "background": "#3f3f3f",
+          "background": "#2E3440",
           "foreground": "#0C93E7",
           "template": "  {{ .Context }} "
         },
         {
-          "background": "#3f3f3f",
+          "background": "#2E3440",
           "foreground": "#E47911",
           "style": "diamond",
           "template": " \ue6a3 {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} ",
