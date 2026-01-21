@@ -53,6 +53,8 @@ packages:
       - "ripgrep"
       - "tldr"
       - "borders"
+      - "aerc"
+      - "w3m"
     cask:
       - "wezterm"
       - "obsidian"
@@ -74,6 +76,8 @@ packages:
       - "chafa"
       - "tldr"
       - "ripgrep"
+      - "aerc"
+      - "w3m"
     cask:
       - "font-fira-code-nerd-font"
       - "font-geist-mono-nerd-font"
