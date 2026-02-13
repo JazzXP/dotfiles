@@ -3,7 +3,7 @@
 # font-family = "Cascadia Code NF Regular Regular"
 # font-family = VictorMono Nerd Font Mono
 font-family = Maple Mono NF 
-font-size = 14
+font-size = 13
 font-feature = "+calt"
 quit-after-last-window-closed = true
 clipboard-read = allow
