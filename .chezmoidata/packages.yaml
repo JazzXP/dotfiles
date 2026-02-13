@@ -52,7 +52,6 @@ packages:
       - "chafa"
       - "ripgrep"
       - "tldr"
-      - "borders"
       - "aerc"
       - "w3m"
     cask:
