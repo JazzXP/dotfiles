@@ -9,24 +9,24 @@ return {
       opts.theme = "nordic"
       opts.sections.lualine_z = {}
       opts.sections.lualine_z = {
-{{ if eq .location "client" -}}
-        {
-          "copilot",
-          show_colors = false,
-          show_loading = true,
-          symbols = {
-            status = {
-              hl = {
-                enabled = "#50FA7B",
-                sleep = "#AEB7D0",
-                disabled = "#6272A4",
-                warning = "#FF8501",
-                unknown = "#FF5555"
-              }
-            }
-          }
-        },
-{{ end -}}
+        -- {{ if eq .location "client" -}}
+        --         {
+        --           "copilot",
+        --           show_colors = false,
+        --           show_loading = true,
+        --           symbols = {
+        --             status = {
+        --               hl = {
+        --                 enabled = "#50FA7B",
+        --                 sleep = "#AEB7D0",
+        --                 disabled = "#6272A4",
+        --                 warning = "#FF8501",
+        --                 unknown = "#FF5555"
+        --               }
+        --             }
+        --           }
+        --         },
+        -- {{ end -}}
         "filetype",
         {
           xp,
@@ -37,9 +37,10 @@ return {
       }
     end,
   },
-{{ if eq .location "client" -}}
-  {
-    "AndreM222/copilot-lualine",
-  },
-{{ end -}}
+  -- {{ if eq .location "client" -}}
+  --   {
+  --     "AndreM222/copilot-lualine",
+  --   },
+  -- {{ end -}}
+  --
 }
