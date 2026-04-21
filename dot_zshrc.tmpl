@@ -39,6 +39,11 @@ if command -v batcat 2>&1 >/dev/null; then
   alias cat="batcat"
   export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | batcat -p -lman'"
 fi
+# Use neovim as man pager if installed. Shift-K opens links
+if command -v nvim 2>&1 >/dev/null; then
+  export MANPAGER='nvim +Man!'
+fi
+
 {{ if eq .chezmoi.os "linux" }}
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
 export BROWSER=wslview
@@ -212,7 +217,9 @@ azure-artifact-login () {
   | xargs -S4096 -I {} \
     sed -i '' 's/\(machine pkgs.dev.azure.com login api password \).*/\1{}/g' ~/.netrc
 }
+# Because netskope has screwed it up
+unset NODE_OPTIONS
 
 {{ end -}}
 eval "$(zoxide init zsh)"
-
+eval "$(op completion zsh)"; compdef _op op
