@@ -149,7 +149,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
     alt-shift-c = 'reload-config'
 
-    alt-r = 'mode resize'
+    # alt-r = 'mode resize'
 
 [mode.resize.binding]
     h = 'resize width -50'
