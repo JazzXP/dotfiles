@@ -7,6 +7,12 @@ return {
         enabled = false,
       },
       servers = {
+        jdtls = {
+          cmd = {
+            "jdtls",
+            "--jvm-arg=-javaagent:" .. vim.fn.expand("~/.local/share/nvim/mason/packages/jdtls/lombok.jar"),
+          },
+        },
         bashls = {
           handlers = {
             ["textDocument/publishDiagnostics"] = function(err, res, ...)
