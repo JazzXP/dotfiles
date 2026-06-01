@@ -106,7 +106,7 @@ batdiff() {
 setopt interactive_comments
 zle -N menu-search
 zle -N recent-paths
-zstyle '*:compinit' arguments -D -i -u -C -w
+zstyle '*:compinit' arguments -i -u -C
 # source ~/.config/zsh/gruvbox-zsh-syntax-highlighting.zsh
 test -r ~/.config/zsh/dir_colors && eval $(dircolors ~/.config/zsh/dir_colors)
 source ~/.config/zsh/nord-fzf.sh
