@@ -24,6 +24,8 @@ packages:
       - "nodejs"
       - "git-delta"
       - "less"
+      - "doggo"
+      - "htop"
     cask:
       - "1password-cli"
     apt:
