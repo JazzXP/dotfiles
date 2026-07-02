@@ -1,6 +1,15 @@
 [user]
 	name = {{ .name | quote }}
 	email = {{ .email | quote }}
+{{ if eq .location "client" -}}
+  signingkey = {{ onepasswordRead "op://general-service-account/Reece Github Key/public key" | quote }}
+{{ end }}
+{{ if eq .location "home" -}}
+  signingkey = {{ onepasswordRead "op://general-service-account/General SSH Key/public key" | quote }}
+{{ end }}
+{{ if eq .location "work" -}}
+  signingkey = {{ onepasswordRead "op://general-service-account/GitHub - Shine Solutions/public key" | quote }}
+{{ end }}
 [init]
 	defaultBranch = main
 [column]
@@ -32,3 +41,12 @@
 	updateRefs = true
 [pull]
 	rebase = true
+[gpg "ssh"]
+{{ if eq .chezmoi.os "darwin" }}
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+{{ end }}
+{{ if eq .location "client" -}}
+  allowedSignersFile = /Users/dickis/.ssh/allowed_signers
+{{ else }}
+  allowedSignersFile = /Users/sdickinson/.ssh/allowed_signers
+{{ end }}
