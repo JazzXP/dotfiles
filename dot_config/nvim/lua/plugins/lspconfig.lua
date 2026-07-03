@@ -13,6 +13,7 @@ return {
             "--jvm-arg=-javaagent:" .. vim.fn.expand("~/.local/share/nvim/mason/packages/jdtls/lombok.jar"),
           },
         },
+        gleam = {},
         bashls = {
           handlers = {
             ["textDocument/publishDiagnostics"] = function(err, res, ...)
