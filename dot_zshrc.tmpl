@@ -5,6 +5,7 @@ export BREWPATH=/opt/homebrew
 export PATH=$PATH:$BREWPATH/bin
 export XDG_CACHE_HOME=~/.cache
 export XDG_CONFIG_HOME=~/.config
+export HERDR_NAV_PASSTHROUGH_RE='^(vi-sql|lazygit)$'
 export OP_SERVICE_ACCOUNT_TOKEN={{ .opserviceaccount }}
 {{ if eq .location "home" -}}
 export GEMINI_API_KEY={{ .geminikey }}
