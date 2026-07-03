@@ -4,7 +4,7 @@ working_dir = "~/.config/herdr/"   # ~ and $VARS expand
 
 [[tabs]]
 name = "Neovim"
-command = "nvim"
+command = "nvim config.toml"
 
 [[tabs]]
 name = "terminal"   # no command — just an empty shell
