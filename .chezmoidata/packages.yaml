@@ -26,7 +26,6 @@ packages:
       - "less"
       - "doggo"
       - "htop"
-      - "herdr"
     cask:
       - "1password-cli"
     apt:
