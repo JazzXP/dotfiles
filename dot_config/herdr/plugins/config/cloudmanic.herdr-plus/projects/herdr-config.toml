@@ -1,0 +1,10 @@
+name = "Herdr Config"
+description = "Example Config"
+working_dir = "~/.config/herdr/"   # ~ and $VARS expand
+
+[[tabs]]
+name = "Neovim"
+command = "nvim"
+
+[[tabs]]
+name = "terminal"   # no command — just an empty shell
