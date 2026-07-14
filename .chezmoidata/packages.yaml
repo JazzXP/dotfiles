@@ -24,6 +24,7 @@ packages:
       - "nodejs"
       - "git-delta"
       - "ydiff"
+      - "diftastic"
       - "less"
       - "doggo"
       - "htop"

@@ -3,6 +3,7 @@ git:
     - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
     - colorArg: never
       pager: ydiff -p cat -s --wrap --width={{columnWidth}}
+    - externalDiffCommand: difft --color=always
 customCommands:
   # retrieved from: https://github.com/jesseduffield/lazygit/wiki/Custom-Commands-Compendium#conventional-commit
   - key: "<c-v>"
