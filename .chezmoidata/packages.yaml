@@ -23,6 +23,7 @@ packages:
       - "yazi"
       - "nodejs"
       - "git-delta"
+      - "ydiff"
       - "less"
       - "doggo"
       - "htop"
