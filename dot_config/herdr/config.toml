@@ -4,7 +4,6 @@
 # Show first-run notification setup on startup.
 # Missing also shows onboarding; set false after you've chosen.
 onboarding = false
-
 [theme]
 # Built-in themes: catppuccin, terminal, tokyo-night, dracula, nord,
 #                  gruvbox, one-dark, solarized, kanagawa, rose-pine,
@@ -135,6 +134,7 @@ split_horizontal = "prefix+minus"
 # directory = "~/.herdr/worktrees"
 
 [ui]
+
 # Sidebar width (auto-scaled based on workspace names, this sets the default)
 # sidebar_width = 26
 
