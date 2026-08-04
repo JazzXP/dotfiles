@@ -8,7 +8,6 @@ packages:
       - "fd"
       - "fastfetch"
       - "zsh"
-      - "zsh-autocomplete"
       - "zsh-syntax-highlighting"
       - "zsh-autosuggestions"
       - "duf"
