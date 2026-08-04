@@ -5,3 +5,14 @@
 [".config/setup-scripts/caveman.sh"]
     type = "file"
     url = "https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.sh"
+# zsh-autocomplete must be cloned WITH submodules — the Homebrew bottle ships
+# without the z-async submodule, which breaks async completion ("z-async:
+# function definition file not found"). Clone from upstream instead.
+[".config/zsh/zsh-autocomplete"]
+    type = "git-repo"
+    url = "https://github.com/marlonrichert/zsh-autocomplete.git"
+    refreshPeriod = "168h"
+    [".config/zsh/zsh-autocomplete".clone]
+        args = ["--depth=1", "--recurse-submodules", "--shallow-submodules"]
+    [".config/zsh/zsh-autocomplete".pull]
+        args = ["--ff-only", "--recurse-submodules"]
