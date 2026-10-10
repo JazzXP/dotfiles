@@ -193,10 +193,11 @@ zstyle '*' single-ignored show
 {{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
    source <(fzf --zsh)
 {{   else }}
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source ~/.config/fzf/abyss.fzf.sh
 {{   end }}
 {{ else }}
   source <(fzf --zsh)
+  source ~/.config/fzf/abyss.fzf.sh
 {{ end }}
 
 # source <(wezterm shell-completion --shell zsh)

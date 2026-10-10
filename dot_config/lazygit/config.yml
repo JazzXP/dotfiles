@@ -5,6 +5,34 @@ git:
       command: ydiff -p cat -s --wrap --width={{columnWidth}}
     - command: difft --color=always
       type: extDiff
+gui:
+  theme:
+    activeBorderColor:
+      - "#bdff00"
+      - bold
+    inactiveBorderColor:
+      - "#4e7a81"
+    searchingActiveBorderColor:
+      - "#fb9d59"
+      - bold
+    optionsTextColor:
+      - "#00bafe"
+    selectedLineBgColor:
+      - "#00313b"
+    inactiveViewSelectedLineBgColor:
+      - "#001e29"
+    cherryPickedCommitFgColor:
+      - "#47d6cf"
+    cherryPickedCommitBgColor:
+      - "#003843"
+    markedBaseCommitFgColor:
+      - "#00bafe"
+    markedBaseCommitBgColor:
+      - "#003843"
+    unstagedChangesColor:
+      - "#f04e4f"
+    defaultFgColor:
+      - default
 customCommands:
   # retrieved from: https://github.com/jesseduffield/lazygit/wiki/Custom-Commands-Compendium#conventional-commit
   - key: "<c-v>"
