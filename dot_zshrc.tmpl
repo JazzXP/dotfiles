@@ -132,6 +132,8 @@ unset __conda_setup
 # <<< conda initialize <<<
 {{ end -}}
 
+source ~/.config/less/abyss.less.sh
+
 {{ if eq .chezmoi.os "darwin" -}}
 export PNPM_HOME="/Users/sdickinson/Library/pnpm"
 {{ else if eq .chezmoi.os "linux" -}}
