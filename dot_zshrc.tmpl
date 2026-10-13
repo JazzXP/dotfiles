@@ -62,6 +62,10 @@ alias dockercleardangling='docker rmi $(docker images -q -f dangling=true)'
 alias imgcat="wezterm imgcat"
 alias oo="cd $HOME/Documents/Obsidian/Personal/"
 alias nvim-light='NVIM_APPNAME="nvim-light" nvim'
+
+source ~/.config/lsd/abyss_ls_colors.sh
+source ~/.config/jq/abyss.jq-colors.sh
+
 mkcd () {
   \mkdir -p "$1"
   cd "$1"
@@ -108,10 +112,6 @@ setopt interactive_comments
 zle -N menu-search
 zle -N recent-paths
 zstyle '*:compinit' arguments -i -u -C
-# source ~/.config/zsh/gruvbox-zsh-syntax-highlighting.zsh
-test -r ~/.config/zsh/dir_colors && eval $(dircolors ~/.config/zsh/dir_colors)
-source ~/.config/zsh/nord-fzf.sh
-# source $BREWPATH/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/abyss.zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $BREWPATH/share/zsh-autosuggestions/zsh-autosuggestions.zsh

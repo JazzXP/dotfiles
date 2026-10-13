@@ -1,38 +1,55 @@
-user: "#cba6f7"
-group: "#b4befe"
+# abyss — lsd colours
+#
+# Install: save as ~/.config/lsd/colors.yaml, then in ~/.config/lsd/config.yaml set:
+#
+#   color:
+#     theme: custom
+#
+# This file colours the columns (permissions, size, date, git status, ...).
+# lsd takes FILE NAME colours from LS_COLORS instead: see abyss.ls_colors.sh.
+
+user: "#cebef4"
+group: "#82a6ac"
+
 permission:
-  read: "#a6e3a1"
-  write: "#f9e2af"
-  exec: "#eba0ac"
-  exec-sticky: "#cba6f7"
-  no-access: "#a6adc8"
-  octal: "#94e2d5"
-  acl: "#94e2d5"
-  context: "#89dceb"
+  read: "#ffbf00"
+  write: "#f04e4f"
+  exec: "#01df72"
+  exec-sticky: "#f383bb"
+  no-access: "#4e7a81"
+  octal: "#47d6cf"
+  acl: "#cebef4"
+  context: "#00bafe"
+
 date:
-  hour-old: "#94e2d5"
-  day-old: "#89dceb"
-  older: "#74c7ec"
+  hour-old: "#bdff00"
+  day-old: "#47d6cf"
+  older: "#4e7a81"
+
 size:
-  none: "#a6adc8"
-  small: "#a6e3a1"
-  medium: "#f9e2af"
-  large: "#fab387"
+  none: "#4e7a81"
+  small: "#01df72"
+  medium: "#ffbf00"
+  large: "#fb9d59"
+
 inode:
-  valid: "#f5c2e7"
-  invalid: "#a6adc8"
+  valid: "#cebef4"
+  invalid: "#4e7a81"
+
 links:
-  valid: "#f5c2e7"
-  invalid: "#a6adc8"
-tree-edge: "#bac2de"
+  valid: "#47d6cf"
+  invalid: "#f04e4f"
+
+tree-edge: "#4e7a81"
+
 git-status:
-  default: "#cdd6f4"
-  unmodified: "#a6adc8"
-  ignored: "#a6adc8"
-  new-in-index: "#a6e3a1"
-  new-in-workdir: "#a6e3a1"
-  typechange: "#f9e2af"
-  deleted: "#f38ba8"
-  renamed: "#a6e3a1"
-  modified: "#f9e2af"
-  conflicted: "#f38ba8"
+  default: "#82a6ac"
+  unmodified: "#4e7a81"
+  ignored: "#4e7a81"
+  new-in-index: "#01df72"
+  new-in-workdir: "#01df72"
+  typechange: "#cebef4"
+  deleted: "#f04e4f"
+  renamed: "#47d6cf"
+  modified: "#ffbf00"
+  conflicted: "#f383bb"

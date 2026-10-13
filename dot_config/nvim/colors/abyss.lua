@@ -331,6 +331,13 @@ local groups = {
   FlashCurrent = { fg = c.bg, bg = c.primary },
   LeapLabelPrimary = { fg = c.bg, bg = c.pink, bold = true },
   LeapMatch = { fg = c.primary, bold = true },
+
+  -- Snacks Explorer ------------------------------------------------------
+  SnacksPickerGitStatusUntracked = { fg = c.dim }, -- untracked files, and the "?" marker
+  SnacksPickerGitStatusIgnored = { fg = c.comment },
+  SnacksPickerPathIgnored = { fg = c.comment }, -- git-ignored files and folders
+  SnacksPickerPathHidden = { fg = c.dim }, -- dotfiles
+  SnacksPickerDir = { fg = c.comment }, -- directory prefix in file paths
 }
 
 for group, spec in pairs(groups) do

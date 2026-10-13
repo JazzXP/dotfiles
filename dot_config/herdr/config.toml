@@ -46,7 +46,7 @@ text          = "#ffd6a7"  # base-content
 subtext0      = "#82a6ac"  # dimmed metadata and hints
  
 # Accent: selected tab, selected row, PREFIX badge
-accent        = "#bdff00"  # primary lime
+accent        = "#ffd6a7"  # primary lime
  
 # Semantic colours: agent state, git counts, per-agent accents
 mauve         = "#cebef4"  # secondary lavender
