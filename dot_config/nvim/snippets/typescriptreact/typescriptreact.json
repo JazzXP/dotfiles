@@ -23,5 +23,18 @@
     "prefix": "log",
     "description": "console.log(value)",
     "body": ["console.log(${1:value});", ""]
+  },
+  "Create Component": {
+    "prefix": "comp",
+    "description": "Create Component",
+    "body": [
+      "import type { FC } from 'react';",
+      "",
+      "type ${1}Props = {}",
+      "",
+      "export const ${1}: FC<${1}Props> = ({}) => {",
+      "  return <div />",
+      "}"
+    ]
   }
 }
