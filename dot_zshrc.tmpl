@@ -62,6 +62,9 @@ alias dockercleardangling='docker rmi $(docker images -q -f dangling=true)'
 alias imgcat="wezterm imgcat"
 alias oo="cd $HOME/Documents/Obsidian/Personal/"
 alias nvim-light='NVIM_APPNAME="nvim-light" nvim'
+if command -v ghostty 2>&1 >/dev/null; then
+  alias ssh='ghostty +ssh'
+fi
 
 source ~/.config/lsd/abyss_ls_colors.sh
 source ~/.config/jq/abyss.jq-colors.sh
