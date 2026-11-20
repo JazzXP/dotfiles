@@ -19,6 +19,8 @@ Host pve
 Host build1.sdickinson.com
   IdentityFile ~/.ssh/ssh-key-2026-05-29.key.pub
   IdentitiesOnly yes
+Host containers.lan.sdickinson.com
+  User root
 {{ end -}}
 {{ if ne .location "server" -}}
 Host github.com
